@@ -1,0 +1,18 @@
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/InspectionWriterWebApi.Common.dll
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/InspectionWriterWebApi.Common.pdb
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/Newtonsoft.Json.dll
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/NPA.CodeGen.dll
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/Newtonsoft.Json.xml
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.dll
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.pdb
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.csprojResolveAssemblyReference.cache
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.dll.mdb
+D:/npa/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/InspectionWriterWebApi.Common.dll.mdb
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/InspectionWriterWebApi.Common.dll
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/InspectionWriterWebApi.Common.dll.mdb
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/Newtonsoft.Json.dll
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/NPA.CodeGen.dll
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/bin/Debug/Newtonsoft.Json.xml
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.csprojResolveAssemblyReference.cache
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.dll
+/Users/jaridgoodwin/Desktop/CR Writer/InspectionWriterApi.Common/InspectionWriterWebApi.Common/obj/Debug/InspectionWriterWebApi.Common.dll.mdb

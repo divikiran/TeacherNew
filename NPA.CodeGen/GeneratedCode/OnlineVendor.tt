@@ -1,0 +1,118 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NPA.CodeGen
+{
+    public partial class OnlineVendor : IEquatable<OnlineVendor>, IComparable<OnlineVendor>
+    {
+        public Guid OnlineVendorId { get; private set; }
+        public string ShortName { get; private set; }
+        public string DisplayName { get; private set; }
+		public int DisplayOrder { get; private set; }
+        public int DynamicCloseTime { get; private set; }
+        
+        private OnlineVendor() { }
+
+        private OnlineVendor(Guid onlineVendorId, string shortName, int displayOrder, int dynamicCloseTime, string displayName)
+        {
+            OnlineVendorId = onlineVendorId;
+            ShortName = shortName;
+            DisplayOrder = displayOrder;
+            DynamicCloseTime = dynamicCloseTime;
+            DisplayName = displayName;
+        }
+                
+        public bool Equals(OnlineVendor other)
+        {
+            return this.OnlineVendorId.Equals(other.OnlineVendorId);
+        }
+                
+        public int CompareTo(OnlineVendor other)
+        {
+            return this.ShortName.CompareTo(other.ShortName);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+
+        public static OnlineVendor FromGuid(Guid guid)
+        {
+            return GetValues().Single(v => v.OnlineVendorId == guid);
+        }
+
+		public static OnlineVendor FromShortName(string shortName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.ShortName, shortName, true) == 0);
+		}
+
+		public static OnlineVendor FromDisplayName(string displayName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.DisplayName, displayName, true) == 0);
+		}
+
+<#
+        var sql = "SELECT OnlineVendorID, OnlineVendor, DisplayOrder, DynamicCloseTime, OnlineVendorPublicDisplay AS DisplayName " +
+                  "FROM OnlineVendor " +
+                  "WHERE ISNULL(Hide, 0) = 0";
+
+        var vals = new Collection<string>();
+
+        using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+        {
+            while (dr.Read())
+            {
+                vals.Add(string.Format("yield return {0};", dr["OnlineVendor"].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+        public static OnlineVendor <#= dr["OnlineVendor"].ToString().ToTitleCase().CleanIdentifierName() #> = 
+                new OnlineVendor(new Guid("<#= dr["OnlineVendorID"].ToString() #>"), "<#= dr["OnlineVendor"].ToString().ToTitleCase().CleanIdentifierName() #>", <#= dr["DisplayOrder"].ToString() #>, <#= dr["DynamicCloseTime"].ToString() #>, "<#= dr["DisplayName"] #>");
+
+<#
+            }
+        }
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+        public static IEnumerable<OnlineVendor> GetValues()
+        {
+<#
+        PushIndent("            ");
+
+        foreach (var val in vals)
+        {
+            WriteLine(val);
+        }
+
+        ClearIndent();
+#>
+        }
+<#
+        }
+#>
+    }
+}
+    

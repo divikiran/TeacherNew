@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConnectivityWarningAlertTitle" xml:space="preserve">
+    <value>Connectivity Warning</value>
+    <comment>Used for Connectivity Alerts</comment>
+  </data>
+  <data name="DismissButtonText" xml:space="preserve">
+    <value>Dismiss</value>
+    <comment>Used to dismiss an Alert</comment>
+  </data>
+  <data name="EnterStockNumber" xml:space="preserve">
+    <value>Enter Stock #</value>
+    <comment>Used by SearchType Enum as placeholder text for search bar</comment>
+  </data>
+  <data name="EnterVin" xml:space="preserve">
+    <value>Enter VIN #</value>
+    <comment>Used by SearchType Enum as placeholder text for search bar</comment>
+  </data>
+  <data name="LocalInspectionsBtnText" xml:space="preserve">
+    <value>Local Inspections</value>
+    <comment>Used as button text</comment>
+  </data>
+  <data name="MessageFailureAlert" xml:space="preserve">
+    <value>Message Failure</value>
+    <comment>Title for alerts on message failure</comment>
+  </data>
+  <data name="OfflineAlertTitle" xml:space="preserve">
+    <value>Offline</value>
+    <comment>Alert Title</comment>
+  </data>
+  <data name="OhSnapAlertTitle" xml:space="preserve">
+    <value>Oh Snap....</value>
+    <comment>Used for the Alert Title on warning alerts</comment>
+  </data>
+  <data name="OkButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>Used by Alerts, or other buttons using "OK" for positive responses.</comment>
+  </data>
+  <data name="ScanBarcodeBtnText" xml:space="preserve">
+    <value>Scan Barcode</value>
+    <comment>Used as button text</comment>
+  </data>
+  <data name="StockNumberEnumDescription" xml:space="preserve">
+    <value>Stock Number</value>
+    <comment>Used by SearchType Enum</comment>
+  </data>
+  <data name="SuccessAlertTitle" xml:space="preserve">
+    <value>Success</value>
+    <comment>Title for alerts on Success of something</comment>
+  </data>
+  <data name="VehicleAlertsTitle" xml:space="preserve">
+    <value>Vehicle Alerts</value>
+    <comment>Title for Vehicle Alerts</comment>
+  </data>
+  <data name="VehicleDetailCommentsTitle" xml:space="preserve">
+    <value>Comments</value>
+    <comment>Title for the VehicleDetailComments Page</comment>
+  </data>
+  <data name="VehicleDetailInspectionsTitle" xml:space="preserve">
+    <value>Inspections</value>
+    <comment>Title for the VehicleDetailInspections Page</comment>
+  </data>
+  <data name="VehicleDetailSendEmailPageTitle" xml:space="preserve">
+    <value>Send Email</value>
+    <comment>Title for Vehicle Detail Send Email Page</comment>
+  </data>
+  <data name="VehicleDetailsPageTitle" xml:space="preserve">
+    <value>Vehicle Details</value>
+    <comment>Title for Vehicle Details Page</comment>
+  </data>
+  <data name="VehicleSearchTitle" xml:space="preserve">
+    <value>Vehicle Search</value>
+    <comment>Title for the Vehicle Search Page</comment>
+  </data>
+  <data name="VINAlertsTitle" xml:space="preserve">
+    <value>VIN Alerts</value>
+    <comment>Title for VIN Alerts</comment>
+  </data>
+  <data name="VinEnumDescription" xml:space="preserve">
+    <value>VIN</value>
+    <comment>Used by SearchType Enum</comment>
+  </data>
+  <data name="WhoopsAlertTitle" xml:space="preserve">
+    <value>Whoops...</value>
+    <comment>Used for the Alert Title on warning alerts</comment>
+  </data>
+  <data name="LocalInspectionsPageTitle" xml:space="preserve">
+    <value>Inspections on Device</value>
+    <comment>Local Inspections Page Title</comment>
+  </data>
+  <data name="InspectionOverviewPageTitle" xml:space="preserve">
+    <value>Overview</value>
+    <comment>Title for the InspectionOverviewPage</comment>
+  </data>
+  <data name="SearchStockNumberPlaceholder" xml:space="preserve">
+    <value>Enter the Stock # to search for</value>
+    <comment>Used by Vehicle SearchPage</comment>
+  </data>
+  <data name="SearchVinPlaceholder" xml:space="preserve">
+    <value>Enter the VIN to search for</value>
+    <comment>Used by Vehicle Search Page</comment>
+  </data>
+  <data name="ChoosePrinterActionSheetTitle" xml:space="preserve">
+    <value>Please Choose Printer</value>
+    <comment>Used by the VehicleDetailBaseViewModel</comment>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Inspection Writer</value>
+  </data>
+  <data name="EmailBody" xml:space="preserve">
+    <value>Body:</value>
+    <comment>Used on VehicleDetailSendEmail</comment>
+  </data>
+  <data name="EmailSubject" xml:space="preserve">
+    <value>Subject:</value>
+    <comment>Used on VehicleDetailSendEmail</comment>
+  </data>
+  <data name="EmailTo" xml:space="preserve">
+    <value>To:</value>
+    <comment>Used on VehicleDetailSendEmail</comment>
+  </data>
+  <data name="ImageGalleryPageTitle" xml:space="preserve">
+    <value>Image Gallery</value>
+  </data>
+  <data name="InsertVehicleInfo" xml:space="preserve">
+    <value>Insert Vehicle Info</value>
+    <comment>Used on VehicleDetailSendEmail</comment>
+  </data>
+  <data name="InspectionCommentsSectionTitle" xml:space="preserve">
+    <value>INSPECTION COMMENTS</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="InspectionMasterSectionTitle" xml:space="preserve">
+    <value>INSPECTION MASTER</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="InspectionOpenRepairs" xml:space="preserve">
+    <value>Open Repairs</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="InspectionTypeSectionTitle" xml:space="preserve">
+    <value>INSPECTION TYPE</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+    <comment>Used for Activity Overlay</comment>
+  </data>
+  <data name="LogoutToolbarText" xml:space="preserve">
+    <value>Logout</value>
+    <comment>Used on VehicleSearchPage</comment>
+  </data>
+  <data name="RepairsSectionTitle" xml:space="preserve">
+    <value>REPAIRS</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="SearchBtnText" xml:space="preserve">
+    <value>Search</value>
+    <comment>Used on VehicleSearchPage</comment>
+  </data>
+  <data name="SubmitBtnText" xml:space="preserve">
+    <value>Submit</value>
+    <comment>Used on VehicleDetailSendEmail</comment>
+  </data>
+  <data name="VehicleAuctioneerNotesTitle" xml:space="preserve">
+    <value>Auctioneer Notes</value>
+    <comment>Used on VehicleDetailComments</comment>
+  </data>
+  <data name="VehicleCommentsTitle" xml:space="preserve">
+    <value>Vehicle Comments</value>
+    <comment>Used on VehicleDetailComments</comment>
+  </data>
+  <data name="VehicleDetailColor" xml:space="preserve">
+    <value>Color</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailMake" xml:space="preserve">
+    <value>Make</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailMilesHours" xml:space="preserve">
+    <value>Miles/Hours</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailModel" xml:space="preserve">
+    <value>Model</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailSectionTitle" xml:space="preserve">
+    <value>VEHICLE DETAILS</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailSize" xml:space="preserve">
+    <value>Size</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailStockNumber" xml:space="preserve">
+    <value>Stock Number</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailVIN" xml:space="preserve">
+    <value>VIN</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehicleDetailYear" xml:space="preserve">
+    <value>Year</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="VehiclePublicAuctionNotesTitle" xml:space="preserve">
+    <value>Public Auction Notes</value>
+    <comment>Used on VehicleDetailComments</comment>
+  </data>
+  <data name="VehicleRepairCommentsTitle" xml:space="preserve">
+    <value>Repair Comments</value>
+    <comment>Used on VehicleDetailComments</comment>
+  </data>
+  <data name="ImageViewPageTitle" xml:space="preserve">
+    <value>Image View</value>
+    <comment>Used for the ImageViewPage</comment>
+  </data>
+  <data name="InspectionOptionsPageTitle" xml:space="preserve">
+    <value>Options</value>
+    <comment>Used for the InspectionOptions Page</comment>
+  </data>
+  <data name="CancelBtnText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Used for any cancel operation on an Alert or Action Sheet</comment>
+  </data>
+  <data name="SelectInspectionMaster" xml:space="preserve">
+    <value>SELECT AN INSPECTION MASTER</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="SelectInspectionType" xml:space="preserve">
+    <value>SELECT AN INSPECTION TYPE</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="EditingInspectionPageTitle" xml:space="preserve">
+    <value>Editing Inspection</value>
+  </data>
+  <data name="LockedInspectionPageTitle" xml:space="preserve">
+    <value>Inspection (Locked)</value>
+  </data>
+  <data name="WarningAlertTitle" xml:space="preserve">
+    <value>Warning...</value>
+    <comment>Used for the Alert Title on warning alerts</comment>
+  </data>
+  <data name="BackMenuOption" xml:space="preserve">
+    <value>Back</value>
+    <comment>Used for the ToolbarText to navigate back</comment>
+  </data>
+  <data name="LoadingAdditionalVehicleDetails" xml:space="preserve">
+    <value>Vehicle Found. Loading Additional Vehicle Details...</value>
+    <comment>Used on the Vehicle Search Page</comment>
+  </data>
+  <data name="SavingData" xml:space="preserve">
+    <value>Saving Data...</value>
+    <comment>Used on the Vehicle Search Page</comment>
+  </data>
+  <data name="VehicleNotFound" xml:space="preserve">
+    <value>Vehicle Not Found.</value>
+  </data>
+  <data name="InspectionNotFound" xml:space="preserve">
+    <value>Inspection Not Found</value>
+  </data>
+  <data name="UnratedInspectionOption" xml:space="preserve">
+    <value>Not Rated</value>
+    <comment>Used on unrated Inspection Categories on the Inspection Options Page</comment>
+  </data>
+  <data name="InspectionStockNumberGrouping" xml:space="preserve">
+    <value>INSPECTIONS FOR {0}</value>
+    <comment>Inspection Grouping by Stock Number</comment>
+  </data>
+  <data name="LocalInspectionGrouping" xml:space="preserve">
+    <value>LOCAL INSPECTIONS</value>
+    <comment>Inspection Grouping for Local Inspections</comment>
+  </data>
+  <data name="CurrentInspectionScore" xml:space="preserve">
+    <value>Current Score</value>
+    <comment>Used on InspectionOverview</comment>
+  </data>
+  <data name="NewInspectionTitle" xml:space="preserve">
+    <value>New Inspection</value>
+    <comment>Used by the InspectionRoot page.</comment>
+  </data>
+  <data name="PrintLabelTitle" xml:space="preserve">
+    <value>Print Label</value>
+    <comment>Used for the Alert Title when Printing a Label</comment>
+  </data>
+  <data name="InstallUpdate" xml:space="preserve">
+    <value>Install Update</value>
+    <comment>Used on the UpdatePage</comment>
+  </data>
+  <data name="UpdateAvailable" xml:space="preserve">
+    <value>UPDATE AVAILABLE</value>
+    <comment>Used on the UpdatePage</comment>
+  </data>
+  <data name="UploadAllMenuOption" xml:space="preserve">
+    <value>Upload All</value>
+    <comment>Used on the Local Inspections Page</comment>
+  </data>
+  <data name="ChallengeTitle" xml:space="preserve">
+    <value>Are you sure?</value>
+    <comment>Used for Challenge Alerts</comment>
+  </data>
+  <data name="NoText" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="YesText" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="NotRated" xml:space="preserve">
+    <value>Not Rated</value>
+  </data>
+  <data name="PreviousValueStringFormat" xml:space="preserve">
+    <value>Previous: {0}</value>
+  </data>
+  <data name="CameraTitle" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+	<data name="PrintLabelSuccess" xml:space="preserve">
+    <value>Print Successfull</value>
+    <comment>Used for the Alert Title when Printing a Label successfull</comment>
+  </data>
+    <data name="TitleSuccess" xml:space="preserve">
+    <value>Success</value>
+    <comment>Used for the Alert Title when success</comment>
+  </data>
+	<data name="TitleFail" xml:space="preserve">
+    <value>Failed</value>
+    <comment>Used for the Alert Title when failed</comment>
+  </data>
+	<data name="TitlePrintFail" xml:space="preserve">
+    <value>Print failed, try again</value>
+    <comment>Used for the Alert Title when printing failed</comment>
+  </data>
+	<data name="SelectPrinterMessage" xml:space="preserve">
+    <value>Please select printer</value>
+    <comment>Used for the Alert Title when not printer found</comment>
+  </data>
+
+
+	
+</root>

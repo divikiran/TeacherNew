@@ -1,0 +1,116 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace NPA.CodeGen
+{
+    public class Location : IEquatable<Location>, IComparable<Location>
+    {
+        public Guid LocationId { get; private set; }
+        public string DisplayName { get; private set; }
+		public string ShortName { get; private set; }
+        public bool IsPhysicalLocation { get; private set; }
+		public string BaseImageUrl { get; private set; }
+
+        private Location() { }
+
+        private Location(Guid locationId, string displayName, string shortName, bool isPhysicalLocation, string baseImageUrl)
+        {
+            LocationId = locationId;
+            DisplayName = displayName;
+			ShortName = shortName;
+            IsPhysicalLocation = isPhysicalLocation;
+			BaseImageUrl = baseImageUrl;
+        }
+
+        public bool Equals(Location other)
+        {
+            return this.LocationId.Equals(other.LocationId);
+        }
+
+        public int CompareTo(Location other)
+        {
+            return this.ShortName.CompareTo(other.ShortName);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+
+        public static Location FromGuid(Guid locationId)
+        {
+            return GetValues().Single(l => l.LocationId == locationId);
+        }
+
+		public static Location FromShortName(string shortName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.ShortName, shortName, true) == 0);
+		}
+
+		public static Location FromDisplayName(string displayName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.DisplayName, displayName, true) == 0);
+		}
+<#
+var sql = "SELECT LocationID, Location, CAST(ISNULL(IsPhysicalLocation, 0) AS bit) AS IsPhysicalLocation, LocalImageURL " +
+          "FROM Location WITH (NOLOCK) " +
+          "WHERE ISNULL(Hide, 0) = 0 " +
+          "ORDER BY IsPhysicalLocation DESC, Location ASC";
+
+var vals = new Collection<string>();
+
+using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+{
+    while (dr.Read())
+    {
+        vals.Add(string.Format("yield return {0};", dr["Location"].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+
+        public static Location <#= dr["Location"].ToString().ToTitleCase().CleanIdentifierName() #> = new Location(new Guid("<#= dr["LocationID"].ToString() #>"), "<#= dr["Location"].ToString().ToTitleCase() #>", "<#= dr["Location"].ToString().CleanIdentifierName() #>", <#= ((bool) dr["IsPhysicalLocation"]) ? "true" : "false" #>, "<#= dr["LocalImageURL"].ToString() #>");
+<#
+    }
+}
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+
+        public static IEnumerable<Location> GetValues()
+        {
+            <#
+                PushIndent("            ");
+
+                foreach (var val in vals)
+                {
+                    WriteLine(val);
+                }
+                
+                ClearIndent();
+            #>    
+        }
+<#
+    }
+#>
+    }
+}

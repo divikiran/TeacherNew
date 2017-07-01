@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Layouts.EmailLayout">
+	<ContentView.Content>
+        <StackLayout BackgroundColor="White" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand">
+                    <StackLayout Padding="10" Orientation="Horizontal">
+                        <Label Text="To:" HorizontalTextAlignment="Center"/>
+                        <Entry Placeholder="someone@npauctions.com" 
+                                Text="{Binding EmailMessage.To}" 
+                                Keyboard="Email"
+                                HorizontalOptions="EndAndExpand" 
+                                WidthRequest="500"/>
+                    </StackLayout>
+                    <StackLayout Padding="10" Orientation="Horizontal">
+                        <Label Text="From:" HorizontalTextAlignment="Center"/>
+                        <Label Text="{Binding EmailMessage.From}" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="EndAndExpand" 
+                                WidthRequest="500" 
+                                HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Padding="10" Orientation="Horizontal">
+                        <Label Text="Subject:" HorizontalTextAlignment="Center"/>
+                        <Entry Placeholder="Reason for emailing" 
+                                Text="{Binding EmailMessage.Subject}" 
+                                HorizontalOptions="EndAndExpand" 
+                                WidthRequest="500"/>
+                    </StackLayout>
+                    
+                    <StackLayout Padding="10" Orientation="Horizontal">
+                        
+                        <Label Text="Body:" HorizontalTextAlignment="Center"/>
+                        
+                        <ContentView BackgroundColor="Gray" 
+                                        Padding="1" 
+                                        HorizontalOptions="EndAndExpand" >
+                            
+                            <Editor Text="{Binding EmailMessage.Body}" 
+                                    HorizontalOptions="EndAndExpand" 
+                                    VerticalOptions="FillAndExpand"
+                                    HeightRequest="200" 
+                                    WidthRequest="500"/>
+                            
+                        </ContentView>
+                    </StackLayout>
+                    <Button Text="Send Email" Style="{StaticResource bottomButton}" HorizontalOptions="Center" WidthRequest="200" Command="{Binding SendEmailCommand}"/>            
+                </StackLayout>
+	</ContentView.Content>
+</ContentView>

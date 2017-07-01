@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BlankPasswordErrorMessage" xml:space="preserve">
+    <value>It would seem you forgot to enter your password. Please enter your password and try again.</value>
+  </data>
+  <data name="BlankUserNameErrorMessage" xml:space="preserve">
+    <value>It would seem you forgot to enter your user name. Please enter your user name and try again.</value>
+  </data>
+  <data name="ConnectivityWarningMessage" xml:space="preserve">
+    <value>It would appear that you are currently accessing the system over a cellular connection. You may incur data overages with high usage.</value>
+  </data>
+  <data name="CurrentInspectionNotFoundMessage" xml:space="preserve">
+    <value>We could not locate the currently selected inspection. That's embarassing. Please try again.</value>
+  </data>
+  <data name="DatabaseLockedMessage" xml:space="preserve">
+    <value>I've given it all that I can Captain... The database is locked. Please wait a moment and try again.</value>
+  </data>
+  <data name="EmailSentMessage" xml:space="preserve">
+    <value>Your message has been sent.</value>
+    <comment>Used by the VehicleDetailSendEmailViewModel</comment>
+  </data>
+  <data name="ExpiredLoginMessage" xml:space="preserve">
+    <value>Sorry but you must sign in again. If the problem persists, please close out the application and try again.</value>
+  </data>
+  <data name="InvalidStockNumber" xml:space="preserve">
+    <value>You must provide a valid Stock Number before proceeding.</value>
+    <comment>Used by Vehicle Search Page</comment>
+  </data>
+  <data name="InvalidVIN" xml:space="preserve">
+    <value>You must provide a valid VIN before proceeding</value>
+    <comment>Used by Vehicle Search Page</comment>
+  </data>
+  <data name="MatrixGlitchErrorMessage" xml:space="preserve">
+    <value>There seems to have been a glitch in the Matrix. Please try again in a little bit. If it still doesn't work contact the nearest Code Monkey.</value>
+  </data>
+  <data name="NoCameraOnDeviceMessage" xml:space="preserve">
+    <value>There doesn't seem to be a camera available on this device.</value>
+    <comment>Used by InspectionCameraPage</comment>
+  </data>
+  <data name="NoInspectionTypesAvailableMessage" xml:space="preserve">
+    <value>There are no inspection types available for this Vehicle.</value>
+  </data>
+  <data name="NoMastersAvailableMessage" xml:space="preserve">
+    <value>There are no masters available for this Vehicle.</value>
+  </data>
+  <data name="NoMasterSelectedMessage" xml:space="preserve">
+    <value>No Inspection Master has been selected. Please select an Inspection Master and try again.</value>
+    <comment>Used by InspectionOptionsViewModel</comment>
+  </data>
+  <data name="NoPrintersAvailable" xml:space="preserve">
+    <value>Seems there aren't any printers available... Not sure what happened.</value>
+    <comment>Used by the VehicleDetailBaseViewModel</comment>
+  </data>
+  <data name="OfflineErrorMessage" xml:space="preserve">
+    <value>Sorry but we can't log you in without an active Internet connection. Please check your network settings and try again.</value>
+  </data>
+  <data name="RequiredAppUpdateErrorMessage" xml:space="preserve">
+    <value>Whoa... we know we did a great job with the app, but the code monkey's have been busy making it better. Please download the latest version to continue.</value>
+  </data>
+  <data name="SelectPrinterLabelType" xml:space="preserve">
+    <value>Please select the type of Printer Label to Print.</value>
+  </data>
+  <data name="StandardErrorMessage" xml:space="preserve">
+    <value>This is an error message</value>
+  </data>
+  <data name="UnauthorizedErrorMessage" xml:space="preserve">
+    <value>Sorry but you are not authorized to create CR's</value>
+  </data>
+  <data name="UnauthorizedLoginMessage" xml:space="preserve">
+    <value>Sorry but the login credentials you provided don't seem to work. Please try again.</value>
+    <comment>Used by the AAAService</comment>
+  </data>
+  <data name="UnknownErrorMessage" xml:space="preserve">
+    <value>An unknown error occurred. Please try again</value>
+  </data>
+  <data name="UserNotFoundMessage" xml:space="preserve">
+    <value>We could not locate the current user. Please close the application and try again.</value>
+  </data>
+  <data name="VehicleNotFoundMessage" xml:space="preserve">
+    <value>No Vehicle could be found for the specified Vehicle Id: {0}</value>
+    <comment>Used by VehicleDetailPage</comment>
+  </data>
+  <data name="UpdateMessageFormat" xml:space="preserve">
+    <value>Your app version {0} is out of date. The new version is {1}. In order to provide the latest fixes and features, you need to install the new version.
+
+In order to continue, please tap 'Install Update' and then 'Install'
+
+Once the update is complete, you will need to re-launch the app.
+
+Thank you.</value>
+  </data>
+  <data name="VehicleNotFoundSearchMessage" xml:space="preserve">
+    <value>The search for {0}: {1}, returned no results.</value>
+    <comment>Used by the VehicleNotFoundException when provided a search type and query</comment>
+  </data>
+  <data name="ExpiredSessionMessage" xml:space="preserve">
+    <value>You have exceeded the maximum session. You have been logged out. Please log in to continue.</value>
+  </data>
+  <data name="NoInspectionImages" xml:space="preserve">
+    <value>This Inspection does not have any images</value>
+  </data>
+  <data name="DeleteInspection" xml:space="preserve">
+    <value>This will permently delete this inspection and any associated images. Are you sure you want to continue?</value>
+  </data>
+</root>

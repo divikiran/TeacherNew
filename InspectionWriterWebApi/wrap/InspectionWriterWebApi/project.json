@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../InspectionWriterWebApi/InspectionWriterWebApi.csproj",
+      "bin": {
+        "assembly": "../../InspectionWriterWebApi/obj/{configuration}/InspectionWriterWebApi.dll",
+        "pdb": "../../InspectionWriterWebApi/obj/{configuration}/InspectionWriterWebApi.pdb"
+      },
+      "dependencies": {
+        "Microsoft.AspNet.Razor": "3.2.3",
+        "Microsoft.AspNet.WebApi": "5.2.3",
+        "Microsoft.AspNet.WebApi.Client": "5.2.3",
+        "Microsoft.AspNet.WebApi.Core": "5.2.3",
+        "Microsoft.AspNet.WebApi.WebHost": "5.2.3",
+        "Microsoft.AspNet.WebPages": "3.2.3",
+        "Microsoft.Web.Infrastructure": "1.0.0.0",
+        "Newtonsoft.Json": "8.0.2",
+        "CrystalDecisions.CrystalReports.Engine": "1.0.0-*",
+        "CrystalDecisions.ReportAppServer.ClientDoc": "1.0.0-*",
+        "CrystalDecisions.ReportAppServer.Controllers": "1.0.0-*",
+        "CrystalDecisions.ReportAppServer.DataDefModel": "1.0.0-*",
+        "CrystalDecisions.ReportSource": "1.0.0-*",
+        "CrystalDecisions.Shared": "1.0.0-*",
+        "NPA.CodeGen": "1.0.0-*",
+        "NPA.Common": "1.0.0-*",
+        "NPA.Core": "1.0.0-*",
+        "stdole": "1.0.0-*"
+      }
+    }
+  }
+}

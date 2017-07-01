@@ -1,0 +1,214 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ Assembly Name="C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\PublicAssemblies\envdte.dll" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<#
+    var tableName = Path.GetFileNameWithoutExtension(Host.TemplateFile);
+    var path = Path.GetDirectoryName(Host.TemplateFile);
+    
+    var columnId = tableName + "Id";
+    var columnName = tableName + "Name";
+    
+    var svcProvider = (IServiceProvider) Host;
+    var dte = (DTE) svcProvider.GetService(typeof(DTE));
+    var project = dte.Solution.FindProjectItem(Host.TemplateFile).ContainingProject;
+#>
+using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace <#= project.Properties.Item("DefaultNamespace").Value #>
+{
+    public partial class <#= tableName #> : IEquatable<<#= tableName #>>, IComparable<<#= tableName #>>
+    {
+<#
+if (!string.IsNullOrWhiteSpace(columnGuid))
+{
+#>
+        public Guid <#= columnGuid #> { get; private set; }
+<#
+}
+#>
+        public <#= columnIdType #> <#= columnId #> { get; private set; }
+        public string DisplayName { get; private set; }
+        public string ShortName { get; private set; }
+
+        private <#= tableName #>() { }
+
+<#
+if (!string.IsNullOrWhiteSpace(columnGuid)) 
+{
+#>
+        private <#= tableName #>(Guid <#= columnGuid.ParamCase() #>, <#= columnIdType #> <#= columnId.ParamCase() #>, string <#= columnName.ParamCase() #>, string displayName)
+        {
+            this.<#= columnGuid #> = <#= columnGuid.ParamCase() #>;
+            this.<#= columnId #> = <#= columnId.ParamCase() #>;
+            this.ShortName = <#= columnName.ParamCase() #>;
+            this.DisplayName = displayName;
+        }
+<#
+}
+else
+{
+#>
+        private <#= tableName #>(<#= columnIdType #> <#= columnId.ParamCase() #>, string <#= columnName.ParamCase() #>, string displayName)
+        {
+            this.<#= columnId #> = <#= columnId.ParamCase() #>;
+            this.ShortName = <#= columnName.ParamCase() #>;
+            this.DisplayName = displayName;
+        }
+<#
+}
+#>
+
+        public bool Equals(<#= tableName #> other)
+        {
+<#
+if (!string.IsNullOrWhiteSpace(columnGuid))
+{
+#>
+            return this.<#= columnGuid #>.Equals(other.<#= columnGuid #>);
+<#
+}
+else
+{
+#>
+            return this.<#= columnId #>.Equals(other.<#= columnId #>);
+<#
+}
+#>
+        }
+
+        public int CompareTo(<#= tableName #> other)
+        {
+            return this.ShortName.CompareTo(other.ShortName);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+<#
+if (!string.IsNullOrWhiteSpace(columnGuid))
+{
+#>
+        
+        public static <#= tableName #> FromId(<#= columnIdType #> id)
+        {
+            return GetValues().SingleOrDefault(v => v.<#= columnId #> == id);
+        }
+        
+        public static <#= tableName #> FromGuid(Guid guid)
+        {
+            return GetValues().SingleOrDefault(v => v.<#= columnGuid #> == guid);
+        }
+<#
+}
+else 
+{
+#>        
+        public static <#= tableName #> FromGuid(Guid guid)
+        {
+            return GetValues().SingleOrDefault(v => v.<#= columnId #> == guid);
+        }
+<#
+}
+#>
+
+        public static <#= tableName #> FromDisplayName(string name)
+        {
+            return GetValues().SingleOrDefault(v => string.Compare(v.DisplayName, name, true) == 0);
+        }
+
+        public static <#= tableName #> FromShortName(string name)
+        {
+            return GetValues().SingleOrDefault(v => string.Compare(v.ShortName, name, true) == 0);
+        }
+<#
+string sql;
+
+if (!string.IsNullOrWhiteSpace(columnGuid))
+{
+    sql = string.Format("SELECT {0}, {1}, {2} FROM {2} ORDER BY {2} ASC", columnGuid, columnId, tableName);
+}
+else
+{
+    sql = string.Format("SELECT {0}, {1} FROM {1} ORDER BY {1} ASC", columnId, tableName);
+}
+
+var vals = new Collection<string>();
+
+using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+{
+    while (dr.Read())
+    {
+        vals.Add(string.Format("yield return {0};", dr[tableName].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+
+        public static <#= tableName #> <#= dr[tableName].ToString().ToTitleCase().CleanIdentifierName() #> = new <#= tableName #>(
+<#
+        if (!string.IsNullOrWhiteSpace(columnGuid))
+        {
+#>
+            new Guid("<#= dr[columnGuid].ToString() #>"), <#= dr[columnId].ToString() #>, "<#= dr[tableName].ToString().ToTitleCase().CleanIdentifierName() #>", "<#= dr[tableName].ToString().ToTitleCase() #>");
+<#
+        }
+        else
+        { 
+            var colType = Type.GetType("System." + columnIdType);
+            var tc = TypeDescriptor.GetConverter(colType);
+            var columnIdValue = tc.ConvertFrom(dr[columnId].ToString());
+
+            if (colType.FullName == "System.Guid")
+            {
+                columnIdValue = "new Guid(\"" + columnIdValue + "\")";
+            }
+#>
+            <#= columnIdValue #>, "<#= dr[tableName].ToString().ToTitleCase().CleanIdentifierName() #>", "<#= dr[tableName].ToString().ToTitleCase() #>");
+<#
+        }
+    }
+}
+#>
+<#
+if (vals.Count > 0)
+{
+#>        
+        
+        public static IEnumerable<<#= tableName #>> GetValues()
+        {
+<#
+    PushIndent("            ");
+
+    foreach (var val in vals)
+    {
+        WriteLine(val);
+    }
+                                
+    ClearIndent();    
+#>
+        }
+<#
+}
+#>
+    }
+}

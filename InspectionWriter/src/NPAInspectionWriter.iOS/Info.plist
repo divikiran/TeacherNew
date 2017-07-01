@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>CRWriter</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.npauctions.InspectionWriter</string>
+	<key>CFBundleShortVersionString</key>
+	<string>4.0.0A</string>
+	<key>CFBundleVersion</key>
+	<string>4.0.0</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>10.3</string>
+	<key>CFBundleIconFiles</key>
+	<array/>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>65.153.138.110</key>
+			<dict/>
+			<key>NSExceptionMinimumTLSVersion</key>
+			<string>TLSv1.2</string>
+			<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>dev-staging-vm</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+			</dict>
+			<key>npauctions.com</key>
+			<dict>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<dict/>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>The Inspection Writer needs access to photos to scan barcodes and get images of beautiful bikes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The Inspection Writer likes photos of Bikes.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We&apos;re like the NSA... except we&apos;re NPA...</string>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>We really like photos</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We pick the best server based on your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We pick the best server based on your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We pick the best server based on your location</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Siri wants to help you find bikes....</string>
+</dict>
+</plist>

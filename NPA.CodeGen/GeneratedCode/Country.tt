@@ -1,0 +1,114 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NPA.CodeGen
+{
+    public partial class Country : IEquatable<Country>, IComparable<Country>
+    {
+        public Guid CountryID { get; private set; }
+        public string Abbreviation { get; private set; }
+        public string CountryName { get; private set; }
+
+        public Country(Guid countryID, string abbreviation, string countryName)
+        {
+            this.CountryID = countryID;
+            this.Abbreviation = abbreviation;
+            this.CountryName = countryName;
+        }
+
+       public bool Equals(Country other)
+        {
+            return this.CountryID.Equals(other.CountryID);
+        }
+
+        public int CompareTo(Country other)
+        {
+            return this.Abbreviation.CompareTo(other.Abbreviation);
+        }
+
+        public override string ToString()
+        {
+            return CountryName;
+        }
+
+        public static Country FromGuid(Guid guid)
+        {
+            return GetValues().SingleOrDefault(s => s.CountryID == guid);
+        }
+
+        public static Country FromAbbreviation(string abbrev)
+        {
+            return GetValues().SingleOrDefault(s => string.Compare(s.Abbreviation, abbrev, true) == 0);
+        }
+
+        public static Country FromCountryName(string CountryName)
+        {
+            return GetValues().SingleOrDefault(s => string.Compare(s.CountryName, CountryName, true) == 0);
+        }
+
+
+<#
+        var sql = "SELECT CountryID, Country, CountryName " +
+                  "FROM Country " +
+                  "WHERE ISNULL(Hide, 0) = 0 " + 
+                  "ORDER BY CountryName ASC";
+
+        var vals = new Collection<string>();
+
+        using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+        {
+            while (dr.Read())
+            {
+                vals.Add(string.Format("yield return {0};", NPA.Common.StringUtil.ToTitleCase(dr["CountryName"].ToString()).CleanIdentifierName()));
+#>
+        public static Country <#= NPA.Common.StringUtil.ToTitleCase(dr["CountryName"].ToString()).CleanIdentifierName() #> = 
+                new Country(new Guid("<#= dr["CountryID"].ToString() #>"), "<#= dr["Country"].ToString() #>", "<#= NPA.Common.StringUtil.ToTitleCase(dr["CountryName"].ToString()) #>");
+
+<#
+            }
+        }
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+        public static IEnumerable<Country> GetValues()
+        {
+<#
+        PushIndent("            ");
+
+        foreach (var val in vals)
+        {
+            WriteLine(val);
+        }
+
+        ClearIndent();
+#>
+        }
+<#
+        }
+#>
+    }
+}

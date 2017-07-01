@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npa:NPABasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Pages.VehicleSearchPage" xmlns:npa="clr-namespace:NPAInspectionWriter.Views;assembly=NPAInspectionWriter" xmlns:controls="clr-namespace:NPAInspectionWriter.Controls;assembly=NPAInspectionWriter" Title="{Binding Title}" IsWaiting="{Binding IsWaiting}" Icon="{Binding Icon}">
+    <npa:NPABasePage.ToolbarItems>
+        <ToolbarItem Text="Log Out" Command="{Binding LogoutCommand}" />
+    </npa:NPABasePage.ToolbarItems>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.ColumnSpan="3" Grid.Row="0">
+            <controls:ExtendedSearchBar Text="{Binding SearchQuery}" Margin="20" Placeholder="{Binding SearchPlaceholder}" SearchCommand="{Binding SearchCommand}" Keyboard="{Binding Keyboard}" MaxLength="{Binding MaxLength}" />
+            <controls:SegmentedControl x:Name="SearchTypeControl" Command="{Binding UpdateSearchTypeCommand}" HeightRequest="50" HorizontalOptions="CenterAndExpand">
+                <controls:SegmentedControl.Children>
+                    <controls:SegmentedControlOption Text="Stock Number" SegmentWidth="150" />
+                    <controls:SegmentedControlOption Text="VIN" SegmentWidth="150" />
+                </controls:SegmentedControl.Children>
+            </controls:SegmentedControl>
+            <Button Text="Search" Command="{Binding SearchCommand}" Style="{DynamicResource searchPageButton}" />
+            <Button Text="Scan Barcode" Command="{Binding ScanBarcodeCommand}" Style="{DynamicResource searchPageButton}" Clicked="BarcodeScanClicked" />
+            <ContentView x:Name="BarcodeScannerView" IsVisible="{Binding ShowScanner}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="800" HeightRequest="100" />
+        </StackLayout>
+        <Button Grid.Row="2" Grid.Column="0" Text="Query Database" IsVisible="false" Style="{StaticResource bottomButton}" />
+        <Button Grid.Row="2" Grid.Column="1" Text="Recreate Database" IsVisible="false" Style="{StaticResource bottomButton}" />
+        <!-- Footer -->
+        <StackLayout Grid.Row="3" Grid.ColumnSpan="3" Style="{DynamicResource footerBar}" />
+        <StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0">
+            <Label Text="{Binding UserLocation}" Style="{DynamicResource footerTextWhite}" />
+            <controls:ImageButton Source="Icons/send-message.png" ImageWidthRequest="32" ImageHeightRequest="23" Text="Feedback" TextColor="White" Orientation="ImageToLeft" Command="{Binding SendFeedbackCommand}" />
+        </StackLayout>
+        <Button Text="Local Inspections" Grid.Row="3" Grid.Column="1" Command="{Binding ViewLocalInspectionsCommand}" Style="{StaticResource bottomButton}" />
+        <Label Text="{Binding AppVersion}" Grid.Row="3" Grid.Column="2" HorizontalOptions="EndAndExpand" Style="{DynamicResource footerTextWhite}" />
+    </Grid>
+</npa:NPABasePage>

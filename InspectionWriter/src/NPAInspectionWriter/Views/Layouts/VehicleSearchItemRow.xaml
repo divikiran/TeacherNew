@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Layouts.VehicleSearchItemRow">
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition>*</RowDefinition>
+            <RowDefinition>*</RowDefinition>
+            <RowDefinition>*</RowDefinition>
+            <RowDefinition>*</RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>90</ColumnDefinition>
+            <ColumnDefinition>*</ColumnDefinition>
+            <ColumnDefinition>*</ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Margin="10" Source="{Binding PrimaryPictureUrl}" Aspect="AspectFit" Grid.Column="0" Grid.RowSpan="4" />
+
+
+        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+            <Label Text="{Binding Year, StringFormat='{0:N}'}" FontSize="Medium"/>
+            <Label Text="{Binding Brand}" FontSize="Medium"/>
+        </StackLayout>
+
+        <Label Text="{Binding Model}" FontSize="Medium"  Grid.Row="1" Grid.Column="1" HorizontalOptions="StartAndExpand"/>
+        
+        <Label Text="{Binding Vin}" 
+                Grid.Column="1" 
+                Grid.Row="2" 
+                FontSize="Small" 
+                HorizontalOptions="StartAndExpand"/>
+        
+        <Label Text="{Binding VehicleState}" 
+                Grid.Column="1" 
+                Grid.Row="3" 
+                FontSize="Small" 
+                HorizontalOptions="StartAndExpand"/>
+
+        <Label Text="{Binding StockNumber}" 
+                FontSize="Medium" 
+                TextColor="Red" 
+                Grid.Row="0" 
+                Grid.Column="2" 
+                HorizontalOptions="EndAndExpand" />
+    </Grid>
+</ViewCell>

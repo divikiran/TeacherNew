@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.VehicleDetailsContentView" xmlns:npa="clr-namespace:NPAInspectionWriter;assembly=NPAInspectionWriter">
+    <ContentView.Content>
+        <Grid HorizontalOptions="FillAndExpand" Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="375" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand">
+                <Image Aspect="Fill" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Source="{Binding Vehicle.PrimaryPictureUrl}" />
+            </StackLayout>
+            <StackLayout Padding="5" Grid.Row="0" Grid.Column="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding YearAndBrand}" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalTextAlignment="Center" />
+                    <Label Text="{Binding Vehicle.Model}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalTextAlignment="Center" />
+                    <Label Text="Vehicle State" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" />
+                    <Label Text="{Binding Vehicle.VehicleState}" Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                    <Label Text="Miles/Hours" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" />
+                    <Label Text="{Binding Vehicle.MilesHours}" Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                    <Label Text="Color" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" />
+                    <Label Text="{Binding Vehicle.Color}" Grid.Row="4" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                    <Label Text="Seller" FontAttributes="Bold" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" />
+                    <Label Text="{Binding Vehicle.Seller}" Grid.Row="5" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                    <Label Text="Sales Rep" FontAttributes="Bold" Grid.Row="6" Grid.Column="0" VerticalTextAlignment="Center" />
+                    <Label Text="{Binding Vehicle.SalesRep}" Grid.Row="6" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                    <StackLayout Grid.Row="7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal">
+                        <Image Source="Icons/barcode.png" HeightRequest="20" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Button Text="Print Label" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="10" WidthRequest="100" Command="{Binding PrinterLabelAction}" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="7" Grid.Column="1" VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="End">
+                        <Image Source="Icons/Printer.png"  HeightRequest="20" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Button Text="{Binding SelectedPrinterName}" BackgroundColor="Transparent" VerticalOptions="Center" Command="{Binding SelectPrinterAction}" />
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

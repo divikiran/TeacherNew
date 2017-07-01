@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npa:BaseLocalInspectionItemRow xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="NPAInspectionWriter.Views.Layouts.PendingLocalInspectionItemRow" 
+    xmlns:npa="clr-namespace:NPAInspectionWriter.Views.Layouts;assembly=NPAInspectionWriter">
+    
+    <ViewCell.ContextActions>
+        <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+           Text="Delete" IsDestructive="True" />
+    </ViewCell.ContextActions>
+    
+    <StackLayout Padding="10,0,0,0">
+      <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="18" />
+              <RowDefinition Height="16" />
+              <RowDefinition Height="16" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Padding="0,5,0,0">
+              <Label Text="{Binding InspectionType}" FontSize="18" FontAttributes="Bold" />
+              <Label Text="{Binding InspectionDate, StringFormat='\{0:MMM dd, yyyy hh:mm\}'}" FontSize="14" />
+              <StackLayout Orientation="Horizontal" >
+                <Label Text="Score: " FontSize="14" />
+                <Label Text="{Binding Score}" FontSize="14" />
+                <Label Text="Photos: " FontSize="14" />
+                <Label Text="{Binding PhotoCount}" FontSize="14" />
+              </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Padding="0,5,0,0" HorizontalOptions="EndAndExpand">
+              <Label Text="{Binding StockNumber}" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="End" />
+              <Label Text="{Binding YearMake}" FontSize="14" HorizontalTextAlignment="End" />
+              <Label Text="{Binding Model}" FontSize="14" HorizontalTextAlignment="End" />
+            </StackLayout>
+            <Image x:Name="UploadButton"
+                Source="{Binding UploadButtonSource}"
+                IsVisible="{Binding PendingUpload}"
+                Margin="10,0,10,0"
+                HeightRequest="45"
+                Grid.RowSpan="3"
+                Grid.Row="0"
+                Grid.Column="2"
+                WidthRequest="45"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"/>
+        </Grid>
+    </StackLayout>
+	
+</npa:BaseLocalInspectionItemRow>

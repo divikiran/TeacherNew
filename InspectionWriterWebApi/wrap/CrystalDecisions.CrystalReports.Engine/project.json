@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "bin": {
+        "assembly": "../../InspectionWriterWebApi/lib/CrystalDecisions.CrystalReports.Engine.dll"
+      },
+      "dependencies": {
+        "CrystalDecisions.ReportAppServer.ClientDoc": "1.0.0-*",
+        "CrystalDecisions.ReportAppServer.Controllers": "1.0.0-*",
+        "CrystalDecisions.ReportAppServer.DataDefModel": "1.0.0-*",
+        "CrystalDecisions.Shared": "1.0.0-*"
+      }
+    }
+  }
+}

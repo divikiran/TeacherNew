@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:local="clr-namespace:NPAInspectionWriter.Extensions;assembly=NPAInspectionWriter"
+                        xmlns:converters="clr-namespace:NPAInspectionWriter.Converters;assembly=NPAInspectionWriter"
+                        xmlns:helpers="clr-namespace:NPAInspectionWriter.Helpers;assembly=NPAInspectionWriter"
+                        x:Class="NPAInspectionWriter.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ControlTemplate x:Key="WhiteVersionFooter">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+          </Grid.ColumnDefinitions>
+          <ContentPresenter Grid.Row="0" Grid.ColumnSpan="2" />
+          <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="White" />
+          <Label Grid.Row="1" Grid.Column="0" Text="{TemplateBinding Parent.UserLocation}" HorizontalOptions="Start" Style="{StaticResource footerTextBase}" />
+          <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding Parent.AppVersion}" HorizontalOptions="End" Style="{StaticResource footerTextBase}" />
+        </Grid>
+      </ControlTemplate>
+      <ControlTemplate x:Key="DarkFooter">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+          </Grid.ColumnDefinitions>
+          <ContentPresenter Grid.Row="0" Grid.ColumnSpan="2" />
+          <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource PrimaryDark}" />
+          <Label Grid.Row="1" Grid.Column="0" Text="{TemplateBinding Parent.UserLocation}" HorizontalOptions="Start" Style="{StaticResource footerTextWhite}" />
+          <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding Parent.AppVersion}" HorizontalOptions="End" Style="{StaticResource footerTextWhite}" />
+        </Grid>
+      </ControlTemplate>
+      <ControlTemplate x:Key="DarkHeaderFooterTemplate">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+          </Grid.ColumnDefinitions>
+          <BoxView Grid.ColumnSpan="2" BackgroundColor="Black" />
+          <Image Source="Images/NPALogo.png" Grid.ColumnSpan="2" Style="{StaticResource logoStyle}" />
+
+          <ContentPresenter Grid.ColumnSpan="2" Grid.Row="1" Padding="5" />
+
+          <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="Black" />
+          <Label Grid.Row="2" Grid.Column="0" Text="{TemplateBinding Parent.UserLocation}" HorizontalOptions="Start" Style="{StaticResource footerTextWhite}" />
+          <Label Grid.Row="2" Grid.Column="1" Text="{TemplateBinding Parent.AppVersion}" HorizontalOptions="End" Style="{StaticResource footerTextWhite}" />
+        </Grid>
+      </ControlTemplate>
+      <!-- Converters -->
+      <converters:EnumToHumanizedStringConverter x:Key="enumToHumanizedString" />
+      <converters:StringToImageSourceConverter x:Key="stringToImageConverter" />
+      <converters:ByteArrayToImageSourceConverter x:Key="byteArrayToImageSource" />
+      <converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter" />
+      <converters:InverseBoolConverter x:Key="inverter"/>
+      <converters:NAConverter x:Key="naConverter"/>
+
+      <!-- Base Colors -->
+      <Color x:Key="Primary">#191919</Color>
+      <Color x:Key="PrimaryDark">#000000</Color>
+      <Color x:Key="PrimaryDarkTranslucent">#0000003C</Color>
+      <Color x:Key="Accent">#434244</Color>
+      <Color x:Key="NavigationText">White</Color>
+      <Color x:Key="LabelSectionText">#6D6D72</Color>
+      <Color x:Key="DetailTextColor">#979797</Color>
+      <Color x:Key="LightBackground">#f1f1f1</Color>
+      <Color x:Key="BarTintColor">#434244</Color>
+      <Color x:Key="TintColor">#4fb4d4</Color>
+      <Color x:Key="BarColor">Black</Color>
+      <Color x:Key="SubBarColor">#444444</Color>
+
+      <!-- Control Templates -->
+      <!--<ControlTemplate x:Key="HeaderFooterTemplate">
+            -->
+      <!--<npa:HeaderFooterTheme RightAlignedFooterText="{Binding AppVersion}" LeftAlignedFooterText="{Binding UserAndLocation}" />-->
+      <!--
+            <ContentPresenter />
+          </ControlTemplate>
+          <ControlTemplate x:Key="BlackVersionFooter">
+            -->
+      <!--<npa:FooterTheme RightAlignedFooterText="{Binding AppVersion}" TextColor="White" FooterColor="Black" />-->
+      <!--
+            <ContentPresenter />
+          </ControlTemplate>
+          <ControlTemplate x:Key="WhiteVersionFooter">
+            -->
+      <!--<npa:FooterTheme RightAlignedFooterText="{Binding AppVersion}" TextColor="Black" FooterColor="White" />-->
+      <!--
+            <ContentPresenter />
+          </ControlTemplate>-->
+
+      <!-- Styles -->
+        <Style x:Key="footerText" TargetType="Label">
+          <Setter Property="FontSize" Value="Small" />
+          <Setter Property="VerticalOptions" Value="End" />
+          <Setter Property="Margin" Value="15,15,15,15" />
+          <Setter Property="TextColor" Value="White" />
+        </Style>
+        <Style x:Key="Overlay" TargetType="BoxView">
+          <Setter Property="BackgroundColor" Value="Black" />
+          <Setter Property="Opacity" Value="0.7" />
+        </Style>
+        <Style TargetType="ActivityIndicator">
+          <Setter Property="HorizontalOptions" Value="Center" />
+          <Setter Property="VerticalOptions" Value="Center" />
+          <Setter Property="Color" Value="White" />
+          <Setter Property="WidthRequest" Value="40" />
+          <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style x:Key="overlayText" TargetType="Label">
+          <Setter Property="TextColor" Value="White" />
+          <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+        <Style TargetType="Image">
+          <Setter Property="HeightRequest" Value="130" />
+          <Setter Property="WidthRequest" Value="542" />
+          <Setter Property="HorizontalOptions" Value="End" />
+          <Setter Property="VerticalOptions" Value="Center" />
+          <Setter Property="Margin" Value="20,5,2,5" />
+          <Setter Property="Aspect" Value="AspectFit" />
+        </Style>
+        <Style x:Key="titleStyle" TargetType="Label">
+          <Setter Property="HorizontalTextAlignment" Value="Start" />
+          <Setter Property="VerticalTextAlignment" Value="Center" />
+          <Setter Property="TextColor" Value="White" />
+          <Setter Property="FontFamily" Value="Arial" />
+          <Setter Property="FontAttributes" Value="Bold" />
+          <Setter Property="FontSize" Value="24" />
+          <Setter Property="Margin" Value="15,0,15,0" />
+        </Style>
+      <Style x:Key="logoStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Aspect" Value="AspectFit" />
+      </Style>
+      <Style x:Key="footerBar" TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="BackgroundColor" Value="Black" />
+      </Style>
+      <Style x:Key="footerTextBase" TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="Margin" Value="15,15,15,15" />
+      </Style>
+      <Style x:Key="footerTextWhite" TargetType="Label" BasedOn="{StaticResource footerTextBase}">
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="buttonBaseStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="Blue" />
+        <Setter Property="BorderColor" Value="Gray" />
+        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      </Style>
+      <Style TargetType="Button" BasedOn="{StaticResource buttonBaseStyle}" />
+      <Style x:Key="searchPageButton" TargetType="Button" BasedOn="{StaticResource buttonBaseStyle}">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="WidthRequest" Value="175" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+        <Setter Property="BorderRadius" Value="5" />
+      </Style>
+      <Style x:Key="bottomButton" TargetType="Button" BaseResourceKey="buttonBaseStyle">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="End" />
+      </Style>
+      <Style x:Key="isWaitingOverlay" TargetType="BoxView">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Color" Value="Black" />
+        <Setter Property="Opacity" Value="0.7" />
+      </Style>
+      <!--<Style TargetType="ContentPage">
+                <Setter Property="Padding" Value="0,20,0,0" />
+                -->
+      <!--<Setter Property="Padding">
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+                    </OnPlatform>
+                </Setter>-->
+      <!--
+            </Style>-->
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

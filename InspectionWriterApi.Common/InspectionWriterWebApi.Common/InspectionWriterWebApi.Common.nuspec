@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package >
+    <metadata>
+        <!-- This will use the AssemblyName -->
+        <id>$id$</id>
+        <!-- This will use the AssemblyVersion -->
+        <version>$version$</version>
+        <title>$id$</title>
+        <description>$description$</description>
+        <authors>NPA</authors>
+        <owners>NPA</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <releaseNotes>Makes AmsUser.AuthToken a Json serializable attribute so that authentication can be updated to use the auth token for subsquent requests</releaseNotes>
+        <copyright>Copyright NPA 2016</copyright>
+        <tags>NPA,Inspection Writer,API</tags>
+    </metadata>
+</package>

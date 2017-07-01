@@ -1,0 +1,6 @@
+﻿<#
+	var columnGuid = "LinkTypeGuid"; 
+	var columnIdType = "Int32";
+	var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;";
+#>
+<#@ include file="../Generators/TypeSafeEnumGenerator.t4" #>

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{664A7D40-AE41-4EE5-B362-03F015C01448}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NPA.CodeGen</RootNamespace>
+    <AssemblyName>NPA.CodeGen</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomCode\SaleHoldReason.cs" />
+    <Compile Include="GeneratedCode\ActivityType.generated.cs">
+      <DependentUpon>ActivityType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\Country.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Country.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\DealerQualificationType.generated.cs">
+      <DependentUpon>DealerQualificationType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\EntityTrackingType.generated.cs">
+      <DependentUpon>EntityTrackingType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\InspectionType.generated.cs">
+      <DependentUpon>InspectionType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\LimitType.generated.cs">
+      <DependentUpon>LimitType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\LinkType.generated.cs">
+      <DependentUpon>LinkType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\Location.generated.cs">
+      <DependentUpon>Location.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\MilesHoursType.generated.cs">
+      <DependentUpon>MilesHoursType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\NotificationStateType.generated.cs">
+      <DependentUpon>NotificationStateType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\NotificationType.generated.cs">
+      <DependentUpon>NotificationType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\OnlineVendor.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnlineVendor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\PaymentType.generated.cs">
+      <DependentUpon>PaymentType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\SaleHoldReason.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleHoldReason.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\SaleRuleType.generated.cs">
+      <DependentUpon>SaleRuleType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\State.generated.cs">
+      <DependentUpon>State.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\TransitType.generated.cs">
+      <DependentUpon>TransitType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\UserLevel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserLevel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\VehicleCategory.generated.cs">
+      <DependentUpon>VehicleCategory.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\VehicleDamageType.generated.cs">
+      <DependentUpon>VehicleDamageType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\VehicleDocType.generated.cs">
+      <DependentUpon>VehicleDocType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\VehicleLossType.generated.cs">
+      <DependentUpon>VehicleLossType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GeneratedCode\VINType.generated.cs">
+      <DependentUpon>VINType.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Helpers\T4ExtensionMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GeneratedCode\VINType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VINType.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\TypeSafeEnumGenerator.t4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GeneratedCode\ActivityType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActivityType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\Country.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Country.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\DealerQualificationType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DealerQualificationType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\EntityTrackingType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityTrackingType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\InspectionType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>InspectionType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\LimitType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LimitType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\LinkType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LinkType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\Location.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Location.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\MilesHoursType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MilesHoursType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\NotificationStateType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NotificationStateType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\NotificationType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NotificationType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\OnlineVendor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OnlineVendor.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\PaymentType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PaymentType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\SaleHoldReason.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SaleHoldReason.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\SaleRuleType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SaleRuleType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\State.tt">
+      <SubType>Code</SubType>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>State.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\TransitType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TransitType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\UserLevel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UserLevel.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\VehicleCategory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VehicleCategory.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\VehicleDamageType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VehicleDamageType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\VehicleDocType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VehicleDocType.generated.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\VehicleLossType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VehicleLossType.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

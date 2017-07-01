@@ -1,0 +1,1869 @@
+{
+    "masterId": "dc3f6956-e7db-40e8-a7f8-7e0e509fa456",
+    "displayName": "*MX/OFFROAD",
+    "defaultForCategory": true,
+    "maxInspectionScore": 100,
+    "categories": [
+        {
+            "categoryId": "8713ae8a-de8c-4ead-a5a4-3683c5990464",
+            "displayName": "*ENGINE MECHANICAL",
+            "weight": 25,
+            "maxScore": 10,
+            "required": true,
+            "options": [
+                {
+                    "optionId": "dfa1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS GOOD/NORMAL",
+                    "value": 9
+                },
+                {
+                    "optionId": "e0a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS/ELECTRICAL FIX NEEDED",
+                    "value": 8
+                },
+                {
+                    "optionId": "e1a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS/FUEL FIX NEEDED",
+                    "value": 8
+                },
+                {
+                    "optionId": "e2a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS/INTERNAL WEAR",
+                    "value": 8
+                },
+                {
+                    "optionId": "7b57c136-5ca4-e511-9413-ac162d7cbbd1",
+                    "displayName": "CASES MODIFIED/REPAIRED",
+                    "value": 7
+                },
+                {
+                    "optionId": "e3a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS/FLUID LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "e4a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS/ROUGH",
+                    "value": 7
+                },
+                {
+                    "optionId": "30669783-36eb-e311-9404-ac162d7cbbd1",
+                    "displayName": "RUNS/THROTTLE INOP",
+                    "value": 7
+                },
+                {
+                    "optionId": "e5a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RUNS/MECHANICAL ISSUE",
+                    "value": 5
+                },
+                {
+                    "optionId": "e6a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "TURNS OVER/WILL NOT START",
+                    "value": 5
+                },
+                {
+                    "optionId": "e7a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "UNDETERMINED",
+                    "value": 4
+                },
+                {
+                    "optionId": "e8a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "SEIZED/LOCKED UP",
+                    "value": 3
+                },
+                {
+                    "optionId": "eaa1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "CASE DAMAGE",
+                    "value": 2
+                },
+                {
+                    "optionId": "e9a1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 2
+                },
+                {
+                    "optionId": "eba1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "dfa1bbcd-b30e-e311-93f7-ac162d7cc3cb",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "42805301-122a-460d-97d0-6347eb6cd65e",
+            "displayName": "FRAME OFF-ROAD",
+            "weight": 15,
+            "maxScore": 10,
+            "required": true,
+            "options": [
+                {
+                    "optionId": "90074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "1e504f8d-f718-e511-9412-ac162d7cbbd1",
+                    "displayName": "COSMETIC BOTTOM FRAME",
+                    "value": 8
+                },
+                {
+                    "optionId": "91074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "9a074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "92074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FRAME TAB BENT",
+                    "value": 7
+                },
+                {
+                    "optionId": "94074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED/CUSTOM",
+                    "value": 7
+                },
+                {
+                    "optionId": "95074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "REPAIRED",
+                    "value": 7
+                },
+                {
+                    "optionId": "93074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SUB-FRAME BENT",
+                    "value": 7
+                },
+                {
+                    "optionId": "99074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE ",
+                    "value": 6
+                },
+                {
+                    "optionId": "f6bc5788-b5b9-e311-93fd-ac162d7cbbd1",
+                    "displayName": "FRAME TAB BROKEN/CRACKED",
+                    "value": 6
+                },
+                {
+                    "optionId": "6445c3d8-0e26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SUB-FRAME MISSING/DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "4780be1a-a324-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BENT",
+                    "value": 4
+                },
+                {
+                    "optionId": "97074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CRACKED",
+                    "value": 4
+                },
+                {
+                    "optionId": "96074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "RUSTED THROUGH",
+                    "value": 4
+                },
+                {
+                    "optionId": "98074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "9b074866-9d24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "91074866-9d24-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "0e96ed45-e72e-4d42-ab53-53d8e310bba3",
+            "displayName": "*TRANSMISSION M/C",
+            "weight": 12,
+            "maxScore": 10,
+            "required": true,
+            "options": [
+                {
+                    "optionId": "b786fa6b-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD/SHIFTS OPERATES NORMAL",
+                    "value": 9
+                },
+                {
+                    "optionId": "7fa34fe3-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CLUTCH ISSUE",
+                    "value": 7
+                },
+                {
+                    "optionId": "631aa5f8-d074-e411-9410-ac162d7cbdf2",
+                    "displayName": "COSMETIC",
+                    "value": 7
+                },
+                {
+                    "optionId": "7cb1b323-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "LEAKS FLUIDS",
+                    "value": 7
+                },
+                {
+                    "optionId": "f0c3f735-812f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "REVERSE INOP",
+                    "value": 7
+                },
+                {
+                    "optionId": "b686fa6b-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "PRIMARY DRIVE NOISE",
+                    "value": 6
+                },
+                {
+                    "optionId": "e38ce58f-f110-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GEAR ISSUE/UNDETERMINED",
+                    "value": 4
+                },
+                {
+                    "optionId": "7bb1b323-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "INOP/UNABLE TO TEST",
+                    "value": 4
+                },
+                {
+                    "optionId": "ca545aa2-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 3
+                },
+                {
+                    "optionId": "0835972c-6f36-e311-93f8-ac162d7cc3cb",
+                    "displayName": "CASE DAMAGE",
+                    "value": 2
+                },
+                {
+                    "optionId": "7ab1b323-dc10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "b786fa6b-dc10-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "52e1b177-690c-4023-88bc-acaa2a5d6ace",
+            "displayName": "*ENGINE COSMETIC",
+            "weight": 8,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "912b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "922b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC LIGHT ",
+                    "value": 8
+                },
+                {
+                    "optionId": "cc943f95-5ca4-e511-9413-ac162d7cbbd1",
+                    "displayName": "CASES MODIFIED/REPAIRED",
+                    "value": 7
+                },
+                {
+                    "optionId": "952b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "942b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "EXTERNAL FLUID LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "d471110a-eb10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "EXTERNAL PARTS MISSING",
+                    "value": 7
+                },
+                {
+                    "optionId": "932b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "STAINED",
+                    "value": 7
+                },
+                {
+                    "optionId": "972b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "CORROSION",
+                    "value": 5
+                },
+                {
+                    "optionId": "f57dd91a-8787-e311-93fc-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "962b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "OUTER COVERS DAMAGED",
+                    "value": 3
+                },
+                {
+                    "optionId": "3dd2c882-f52a-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "952b6a60-b40e-e311-93f7-ac162d7cc3cb",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "dcfb1100-8f8e-4700-9b1c-81f28967c5dc",
+            "displayName": "SUSPENSION/FRONT",
+            "weight": 7,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "63c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "67c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "CLAMPS MISALIGNED",
+                    "value": 8
+                },
+                {
+                    "optionId": "64c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "b257f3cb-e910-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COVERS SCRAPED/DENTED",
+                    "value": 8
+                },
+                {
+                    "optionId": "b357f3cb-e910-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "69c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "MODIFIED",
+                    "value": 7
+                },
+                {
+                    "optionId": "66c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "SEAL LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "65c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "STEERING HEAD BEARINGS WORN",
+                    "value": 7
+                },
+                {
+                    "optionId": "68c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "UPPER CLAMP DAMAGED",
+                    "value": 7
+                },
+                {
+                    "optionId": "8a07d4ab-f42a-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 6
+                },
+                {
+                    "optionId": "6ac8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "LOWER CLAMP DAMAGED",
+                    "value": 6
+                },
+                {
+                    "optionId": "6bc8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "INNER FORK TUBE DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "6cc8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "OUTER FORK TUBE DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "83ecb394-7236-e311-93f8-ac162d7cc3cb",
+                    "displayName": "SUSPENSION INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "55adebcc-fb2a-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "6dc8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "DAMAGED/BENT",
+                    "value": 2
+                },
+                {
+                    "optionId": "6ec8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "66c8ca00-b80e-e311-93f7-ac162d7cc3cb",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "28c60352-adf3-4d61-8ec3-7a6b903f32ba",
+            "displayName": "EXHAUST M/C",
+            "weight": 5,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "a99582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "AFTERMARKET",
+                    "value": 9
+                },
+                {
+                    "optionId": "a89582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "aa9582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT ",
+                    "value": 8
+                },
+                {
+                    "optionId": "3c944920-b811-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "ab9582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING/DAMAGED SHIELDS",
+                    "value": 7
+                },
+                {
+                    "optionId": "ac9582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DENTED",
+                    "value": 6
+                },
+                {
+                    "optionId": "f3795934-018a-e411-940e-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "3d944920-b811-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED",
+                    "value": 5
+                },
+                {
+                    "optionId": "7fb3714f-1c22-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CRACKED",
+                    "value": 4
+                },
+                {
+                    "optionId": "ae9582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "ad9582ef-b711-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "3b944920-b811-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "f3795934-018a-e411-940e-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "e1f94120-9ea7-4305-bb01-fef27caf16cd",
+            "displayName": "SHOCK/S OFFROAD/REAR",
+            "weight": 5,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "027353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "AFTERMARKET",
+                    "value": 9
+                },
+                {
+                    "optionId": "017353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "037353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "047353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "057353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "LEAKING",
+                    "value": 6
+                },
+                {
+                    "optionId": "067353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "44b11575-1b94-e311-93fc-ac162d7cbbd1",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "077353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISSASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "087353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "097353e3-6225-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "037353e3-6225-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "3a88ca6a-5a14-43ee-892b-daea911bff2a",
+            "displayName": "SUSPENSION/REAR",
+            "weight": 5,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "c43553d0-7616-e311-93fb-ac162d7cbbd1",
+                    "displayName": "AFTERMARKET",
+                    "value": 9
+                },
+                {
+                    "optionId": "f061503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "f161503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "f261503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "f561503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED",
+                    "value": 7
+                },
+                {
+                    "optionId": "f361503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SWINGARM BEARINGS WORN",
+                    "value": 7
+                },
+                {
+                    "optionId": "56b5a84b-6125-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DENTED",
+                    "value": 6
+                },
+                {
+                    "optionId": "01b7b7c6-f15d-e411-940b-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "c8ef3c05-f131-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "f661503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SUSPENSION INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "f461503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "ac866b29-003c-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ALL DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "f761503b-bd11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ALL MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "f261503b-bd11-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "8d8108f6-f0fa-4f8c-92ea-b77e121e2283",
+            "displayName": "WHEEL/FRONT MC",
+            "weight": 5,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "9c5c9454-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "717580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "727580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RE-PAINTED/CHROME/POLISHED",
+                    "value": 8
+                },
+                {
+                    "optionId": "737580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "264b62e7-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "LOOSE SPOKES",
+                    "value": 7
+                },
+                {
+                    "optionId": "615d4e13-bf5e-e411-940b-ac162d7cbbd1",
+                    "displayName": "MODIFIED",
+                    "value": 7
+                },
+                {
+                    "optionId": "747580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "WHEEL BEARINGS WORN",
+                    "value": 7
+                },
+                {
+                    "optionId": "8401992d-c210-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DENTED",
+                    "value": 6
+                },
+                {
+                    "optionId": "5d66985a-9f20-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BENT",
+                    "value": 5
+                },
+                {
+                    "optionId": "b9051923-e365-e411-940d-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "757580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "CRACKED",
+                    "value": 3
+                },
+                {
+                    "optionId": "767580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "777580da-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "717580da-b60e-e311-93f7-ac162d7cc3cb",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "f3018494-b15b-4863-9e7a-8a11d82ab798",
+            "displayName": "WHEEL/REAR MC",
+            "weight": 5,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "866362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "876362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "8a6362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "RE-PAINTED/CHROME/POLISHED",
+                    "value": 8
+                },
+                {
+                    "optionId": "886362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "172b35f4-b60e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "LOOSE SPOKES",
+                    "value": 7
+                },
+                {
+                    "optionId": "30be0c2c-bf5e-e411-940b-ac162d7cbbd1",
+                    "displayName": "MODIFIED",
+                    "value": 7
+                },
+                {
+                    "optionId": "896362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "WHEEL BEARINGS WORN",
+                    "value": 7
+                },
+                {
+                    "optionId": "26665122-c210-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DENTED",
+                    "value": 6
+                },
+                {
+                    "optionId": "e4990f6d-9f20-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BENT",
+                    "value": 5
+                },
+                {
+                    "optionId": "709e5b2e-e365-e411-940d-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 5
+                },
+                {
+                    "optionId": "8b6362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "CRACKED",
+                    "value": 3
+                },
+                {
+                    "optionId": "8c6362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "8d6362e7-b50e-e311-93f7-ac162d7cc3cb",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "886362e7-b50e-e311-93f7-ac162d7cc3cb",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "84c78dee-1d63-47db-9d06-a9bf5b8375dc",
+            "displayName": "BRAKES/FRONT",
+            "weight": 4,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "da37af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD/NORMAL WEAR",
+                    "value": 9
+                },
+                {
+                    "optionId": "dd37af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "de37af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "dc37af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FLUID LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "db37af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "e037af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ROTOR BENT",
+                    "value": 5
+                },
+                {
+                    "optionId": "92b0136b-0c26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "90b0136b-0c26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "VISUALLY COMPLETE/CANNOT VERIFY",
+                    "value": 5
+                },
+                {
+                    "optionId": "df37af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "91b0136b-0c26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "e137af8b-be11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "dd37af8b-be11-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "ec8bd6be-d28b-4819-8c79-1df4a79d5cc5",
+            "displayName": "BRAKES/REAR",
+            "weight": 4,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "d21a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD/NORMAL WEAR",
+                    "value": 9
+                },
+                {
+                    "optionId": "d31a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "d41a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "d51a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FLUID LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "3343bfdd-d835-e311-93f8-ac162d7cc3cb",
+                    "displayName": "INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "d61a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ROTOR BENT",
+                    "value": 5
+                },
+                {
+                    "optionId": "9b838dee-0c26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "d71a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "VISUALLY COMPLETE/CANNOT VERIFY",
+                    "value": 5
+                },
+                {
+                    "optionId": "d81a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "9a838dee-0c26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "d91a8304-bf11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "d21a8304-bf11-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "a83b00a6-a567-4ca8-8763-91389544629a",
+            "displayName": "CONTROLS/FOOT",
+            "weight": 4,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "4bd0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "4cd0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT ",
+                    "value": 8
+                },
+                {
+                    "optionId": "ff08afc1-832f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BRAKE PEDAL BENT",
+                    "value": 7
+                },
+                {
+                    "optionId": "4dd0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "3d54dc03-fb1a-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SHIFT LEVER BENT",
+                    "value": 7
+                },
+                {
+                    "optionId": "4ed0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BRAKE PEDAL DAMAGED",
+                    "value": 6
+                },
+                {
+                    "optionId": "4fd0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "RUSTED/CORRODED",
+                    "value": 6
+                },
+                {
+                    "optionId": "fe08afc1-832f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SHIFT LEVER DAMAGED",
+                    "value": 6
+                },
+                {
+                    "optionId": "3cc6a13d-f131-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BOTH FOOT CONTROLS BENT",
+                    "value": 5
+                },
+                {
+                    "optionId": "50d0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "51d0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "0009afc1-832f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BOTH FOOT CONTROLS DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "52d0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "4cd0f4d0-bb11-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "1bcf33a5-158a-4743-a68b-365732401ce0",
+            "displayName": "CONTROLS/HAND",
+            "weight": 4,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "bdcc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "b29ebb2f-fb1a-e311-93fb-ac162d7cbbd1",
+                    "displayName": "1 LEVER BENT",
+                    "value": 8
+                },
+                {
+                    "optionId": "becc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT ",
+                    "value": 8
+                },
+                {
+                    "optionId": "c1cc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "1 LEVER DAMAGED",
+                    "value": 7
+                },
+                {
+                    "optionId": "73a6ebd2-822f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "2 LEVERS BENT",
+                    "value": 7
+                },
+                {
+                    "optionId": "c2cc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BARS BENT",
+                    "value": 7
+                },
+                {
+                    "optionId": "c0cc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "32412b7e-59fe-e411-940a-ac162d7cc3cb",
+                    "displayName": "FLUID LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "8fa916e3-832f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GRIPS RIPPED/TORN",
+                    "value": 7
+                },
+                {
+                    "optionId": "74a6ebd2-822f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "2 LEVERS DAMAGED",
+                    "value": 6
+                },
+                {
+                    "optionId": "91b04704-bb11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "RUSTED/CORRODED",
+                    "value": 6
+                },
+                {
+                    "optionId": "056c7c0b-862f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "STEERING STEM BENT",
+                    "value": 6
+                },
+                {
+                    "optionId": "f8e81918-9536-e311-93f8-ac162d7cc3cb",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "c3cc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "STEERING INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "bfcc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "e65c18d1-003c-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ALL DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "c4cc8510-ba11-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ALL MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "becc8510-ba11-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "71a87cc8-a5cc-4a98-9a73-8208917884a1",
+            "displayName": "FINAL DRIVE",
+            "weight": 4,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "3756aa5b-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "84bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "1ab003de-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "85bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FLUID LEAK",
+                    "value": 7
+                },
+                {
+                    "optionId": "87bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MECHANICAL ISSUE",
+                    "value": 6
+                },
+                {
+                    "optionId": "7e6e173d-1269-e411-940d-ac162d7cbbd1",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "86bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "WORN CHAIN/SPROCKETS/BELT",
+                    "value": 5
+                },
+                {
+                    "optionId": "88bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CANNOT VERIFY",
+                    "value": 4
+                },
+                {
+                    "optionId": "89bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "18b003de-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CASE DAMAGE",
+                    "value": 2
+                },
+                {
+                    "optionId": "19b003de-dd10-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "84bdf6aa-dd10-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "89d55e2f-1c00-407e-93c2-daec561802d5",
+            "displayName": "FUEL TANK OFFROAD",
+            "weight": 3,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "9fb7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "a0b7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "a1b7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "a2b7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CRACKED",
+                    "value": 5
+                },
+                {
+                    "optionId": "a3b7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FUEL LEAK",
+                    "value": 5
+                },
+                {
+                    "optionId": "c14b3e58-0a26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "a4b7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "9fb7a0d9-7825-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "0d83fc64-ac02-48de-9948-554fbd26c5b8",
+            "displayName": "RADIATOR",
+            "weight": 3,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "ce6bf472-4bc7-df11-bb1e-0019b9b35da2",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "330b258a-4bc7-df11-bb1e-0019b9b35da2",
+                    "displayName": "AFTERMARKET/MODIFIED",
+                    "value": 8
+                },
+                {
+                    "optionId": "3f05cdbd-a924-e311-93fb-ac162d7cbbd1",
+                    "displayName": "RELOCATED",
+                    "value": 8
+                },
+                {
+                    "optionId": "cf6bf472-4bc7-df11-bb1e-0019b9b35da2",
+                    "displayName": "DENTED",
+                    "value": 7
+                },
+                {
+                    "optionId": "d06bf472-4bc7-df11-bb1e-0019b9b35da2",
+                    "displayName": "BENT NOT LEAKING",
+                    "value": 6
+                },
+                {
+                    "optionId": "d16bf472-4bc7-df11-bb1e-0019b9b35da2",
+                    "displayName": "BENT LEAKING",
+                    "value": 3
+                },
+                {
+                    "optionId": "3e05cdbd-a924-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 0
+                },
+                {
+                    "optionId": "d26bf472-4bc7-df11-bb1e-0019b9b35da2",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "d06bf472-4bc7-df11-bb1e-0019b9b35da2",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "ae3baba4-8964-4a73-b4cc-bdffec1951cc",
+            "displayName": "SHROUDS/SIDE COVERS",
+            "weight": 3,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "8533ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "8633ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "8733ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "8833ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED/CUSTOM",
+                    "value": 7
+                },
+                {
+                    "optionId": "8933ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE ",
+                    "value": 6
+                },
+                {
+                    "optionId": "8a33ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CRACKED",
+                    "value": 5
+                },
+                {
+                    "optionId": "8b33ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "8c33ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "8d33ab3b-6425-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "8633ab3b-6425-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "77fa5d2e-468d-403d-9a18-e1e8f3433735",
+            "displayName": "FENDER OFFROAD/FRONT",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "ba5172fe-ad24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "b8343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "b9343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "ba343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED/CUSTOM",
+                    "value": 7
+                },
+                {
+                    "optionId": "bb343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE",
+                    "value": 6
+                },
+                {
+                    "optionId": "bc343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CRACKED",
+                    "value": 5
+                },
+                {
+                    "optionId": "bd343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 0
+                },
+                {
+                    "optionId": "be343934-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "ba5172fe-ad24-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "1170d104-0f90-4af3-a23d-da83037c7de4",
+            "displayName": "FENDER OFFROAD/REAR",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "d9d9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "dad9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT ",
+                    "value": 8
+                },
+                {
+                    "optionId": "dbd9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "dcd9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED/CUSTOM",
+                    "value": 7
+                },
+                {
+                    "optionId": "ddd9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC DAMAGE ",
+                    "value": 6
+                },
+                {
+                    "optionId": "ded9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "CRACKED",
+                    "value": 5
+                },
+                {
+                    "optionId": "dfd9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 0
+                },
+                {
+                    "optionId": "e0d9a092-ae24-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "d9d9a092-ae24-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "dc333267-863a-4c8d-a365-0101aad69d39",
+            "displayName": "FOOT RESTS",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "a8760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "a9760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT ",
+                    "value": 8
+                },
+                {
+                    "optionId": "abacfaf5-ef31-e311-93fb-ac162d7cbbd1",
+                    "displayName": "1 DAMAGED",
+                    "value": 7
+                },
+                {
+                    "optionId": "adacfaf5-ef31-e311-93fb-ac162d7cbbd1",
+                    "displayName": "1 MISSING",
+                    "value": 7
+                },
+                {
+                    "optionId": "c7ca3b7d-842f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "BOTH REAR MISSING",
+                    "value": 7
+                },
+                {
+                    "optionId": "aa760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "ca4838ed-56cf-e511-9413-ac162d7cbbd1",
+                    "displayName": "BENT",
+                    "value": 6
+                },
+                {
+                    "optionId": "ab760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "2 DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "ac760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "2 MISSING",
+                    "value": 5
+                },
+                {
+                    "optionId": "ad760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "aeacfaf5-ef31-e311-93fb-ac162d7cbbd1",
+                    "displayName": "3 DAMAGED",
+                    "value": 3
+                },
+                {
+                    "optionId": "acacfaf5-ef31-e311-93fb-ac162d7cbbd1",
+                    "displayName": "3 MISSING",
+                    "value": 3
+                },
+                {
+                    "optionId": "ae760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ALL DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "af760bf1-c311-e311-93fb-ac162d7cbbd1",
+                    "displayName": "ALL MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "a9760bf1-c311-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "daf68e66-fadd-4c78-90a3-4033af0f6491",
+            "displayName": "LIGHTS/OFFROAD",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "667d51cb-6325-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "e8af851b-0e26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC",
+                    "value": 7
+                },
+                {
+                    "optionId": "677d51cb-6325-e311-93fb-ac162d7cbbd1",
+                    "displayName": "HI/LOW INOP",
+                    "value": 7
+                },
+                {
+                    "optionId": "687d51cb-6325-e311-93fb-ac162d7cbbd1",
+                    "displayName": "INOP",
+                    "value": 5
+                },
+                {
+                    "optionId": "e9af851b-0e26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SOME PARTS DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "697d51cb-6325-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "6a7d51cb-6325-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "6b7d51cb-6325-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": null
+        },
+        {
+            "categoryId": "9891c43c-12ad-40ca-96a4-af57982013b8",
+            "displayName": "SEAT/S OR BUCKET SEATS",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "fb917991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "AFTERMARKET",
+                    "value": 9
+                },
+                {
+                    "optionId": "fa917991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "fd917991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC",
+                    "value": 7
+                },
+                {
+                    "optionId": "fe917991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED",
+                    "value": 7
+                },
+                {
+                    "optionId": "4802fff0-872f-e311-93fb-ac162d7cbbd1",
+                    "displayName": "STAINED/FADED",
+                    "value": 7
+                },
+                {
+                    "optionId": "b301cee6-3b26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING PASSENGER SEAT",
+                    "value": 5
+                },
+                {
+                    "optionId": "fc917991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "RIPPED/TORN",
+                    "value": 5
+                },
+                {
+                    "optionId": "01927991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SEAT BASE CRACKED/DAMAGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "00927991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 4
+                },
+                {
+                    "optionId": "b5988633-0d26-e311-93fb-ac162d7cbbd1",
+                    "displayName": "DAMAGED",
+                    "value": 1
+                },
+                {
+                    "optionId": "ff917991-6525-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "fb917991-6525-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "2a2a8deb-323d-4b3e-9c58-4f7f66833c14",
+            "displayName": "TIRE/S FRONT OFFROAD",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "27154617-6625-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "28154617-6625-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SOME WEAR",
+                    "value": 7
+                },
+                {
+                    "optionId": "90bc345b-c60b-e511-9412-ac162d7cbbd1",
+                    "displayName": "1 MISSING",
+                    "value": 5
+                },
+                {
+                    "optionId": "bd7b0d48-033c-e311-93fb-ac162d7cbbd1",
+                    "displayName": "PLUGGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "29154617-6625-e311-93fb-ac162d7cbbd1",
+                    "displayName": "HEAVY WEAR",
+                    "value": 4
+                },
+                {
+                    "optionId": "2a154617-6625-e311-93fb-ac162d7cbbd1",
+                    "displayName": "POOR",
+                    "value": 3
+                },
+                {
+                    "optionId": "8b32a6fe-6625-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FLAT/WILL NOT HOLD AIR",
+                    "value": 2
+                },
+                {
+                    "optionId": "2b154617-6625-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "28154617-6625-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "2dc89eca-221b-43ee-a9c6-1dcb21c5aaa7",
+            "displayName": "TIRE/S REAR OFFROAD",
+            "weight": 2,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "93ff133a-6725-e311-93fb-ac162d7cbbd1",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "94ff133a-6725-e311-93fb-ac162d7cbbd1",
+                    "displayName": "SOME WEAR",
+                    "value": 7
+                },
+                {
+                    "optionId": "9df9e74d-c60b-e511-9412-ac162d7cbbd1",
+                    "displayName": "1 MISSING",
+                    "value": 5
+                },
+                {
+                    "optionId": "8e65d23d-033c-e311-93fb-ac162d7cbbd1",
+                    "displayName": "PLUGGED",
+                    "value": 5
+                },
+                {
+                    "optionId": "95ff133a-6725-e311-93fb-ac162d7cbbd1",
+                    "displayName": "HEAVY WEAR",
+                    "value": 4
+                },
+                {
+                    "optionId": "96ff133a-6725-e311-93fb-ac162d7cbbd1",
+                    "displayName": "POOR",
+                    "value": 3
+                },
+                {
+                    "optionId": "97ff133a-6725-e311-93fb-ac162d7cbbd1",
+                    "displayName": "FLAT/WILL NOT HOLD AIR",
+                    "value": 2
+                },
+                {
+                    "optionId": "98ff133a-6725-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": {
+                "optionId": "94ff133a-6725-e311-93fb-ac162d7cbbd1",
+                "displayName": null,
+                "value": 0
+            }
+        },
+        {
+            "categoryId": "2a5c2d3e-6a50-41e8-984f-4b7a49fca8cd",
+            "displayName": "*BATTERY",
+            "weight": 1,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "0c6332a8-1331-4e2f-a083-4820d5e4ee75",
+                    "displayName": "BATTERY WORKS",
+                    "value": 9
+                },
+                {
+                    "optionId": "3318d6f9-1ce2-4151-8456-88a245af1214",
+                    "displayName": "BATTERY INOP",
+                    "value": 4
+                },
+                {
+                    "optionId": "31d6307c-7147-4300-8a25-e941af1aed11",
+                    "displayName": "BATTERY WILL NOT CHARGE",
+                    "value": 0
+                },
+                {
+                    "optionId": "9bc81680-b2d0-df11-bb1e-0019b9b35da2",
+                    "displayName": "BROKEN POST",
+                    "value": 0
+                },
+                {
+                    "optionId": "9ac81680-b2d0-df11-bb1e-0019b9b35da2",
+                    "displayName": "CRACKED/LEAKING",
+                    "value": 0
+                },
+                {
+                    "optionId": "395cfd37-c2e4-4a01-960a-9ed82bd656c5",
+                    "displayName": "MISSING",
+                    "value": 0
+                },
+                {
+                    "optionId": "158681d8-4e59-df11-827d-0019b9b35da2",
+                    "displayName": "UNDETERMINED",
+                    "value": 0
+                }
+            ],
+            "previousValue": null
+        },
+        {
+            "categoryId": "f1ca4a02-282d-41a8-b5e5-12b275d47221",
+            "displayName": "*STAND",
+            "weight": 1,
+            "maxScore": 10,
+            "required": false,
+            "options": [
+                {
+                    "optionId": "586fd6a9-0be5-4745-b04c-ac8e689d7934",
+                    "displayName": "GOOD",
+                    "value": 9
+                },
+                {
+                    "optionId": "6444218b-c411-e311-93fb-ac162d7cbbd1",
+                    "displayName": "COSMETIC LIGHT",
+                    "value": 8
+                },
+                {
+                    "optionId": "65e5ab77-855d-e111-8492-0019b9b35da2",
+                    "displayName": "COSMETIC HEAVY",
+                    "value": 7
+                },
+                {
+                    "optionId": "dfae67d0-3a37-e311-93fb-ac162d7cbbd1",
+                    "displayName": "MODIFIED/CUSTOM",
+                    "value": 7
+                },
+                {
+                    "optionId": "64e5ab77-855d-e111-8492-0019b9b35da2",
+                    "displayName": "RUSTED/CORRODED",
+                    "value": 7
+                },
+                {
+                    "optionId": "f1a1e7b9-4eb0-4954-9f04-409bc8b3d899",
+                    "displayName": "DISASSEMBLED/PARTS MISSING",
+                    "value": 5
+                },
+                {
+                    "optionId": "39adb9b9-37eb-e311-9404-ac162d7cbbd1",
+                    "displayName": "MISSING CENTER STAND",
+                    "value": 5
+                },
+                {
+                    "optionId": "441fc5c6-0e31-4e04-bec6-83fe0d508564",
+                    "displayName": "BENT/DAMAGED",
+                    "value": 4
+                },
+                {
+                    "optionId": "dd098417-1123-4940-95bd-2cb6accedae9",
+                    "displayName": "MISSING",
+                    "value": 0
+                }
+            ],
+            "previousValue": null
+        }
+    ]
+}

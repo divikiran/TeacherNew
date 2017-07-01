@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Pages.PrintersListPage" Padding="0,40,0,0" Title="Available Printers" xmlns:npa="clr-namespace:NPAInspectionWriter;assembly=NPAInspectionWriter"  xmlns:npabehaviors="clr-namespace:NPAInspectionWriter.Behaviors;assembly=NPAInspectionWriter">
+    <ContentPage.Content>
+        <StackLayout Padding="0,0,0,20">
+            <Label TextColor="Green" Text="Below are list of available printers, please select one to continue printing" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+            <npa:Separator />
+            <ListView ItemsSource="{Binding PrintersList}" HasUnevenRows="True" SeparatorVisibility="Default">
+                <ListView.Behaviors>
+                    <npabehaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding PrinterTapped}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding PrinterName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

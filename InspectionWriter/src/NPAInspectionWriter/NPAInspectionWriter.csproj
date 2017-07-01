@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{31323BB8-8AD8-4D9F-88FE-46ECA8E9ABFA}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>NPAInspectionWriter</RootNamespace>
+		<AssemblyName>NPAInspectionWriter</AssemblyName>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+		<TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+		<FileAlignment>512</FileAlignment>
+		<ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+		<NuGetPackageImportStamp>
+		</NuGetPackageImportStamp>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<NoWarn>
+		</NoWarn>
+		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugWithMocks|AnyCPU'">
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\DebugWithMocks\</OutputPath>
+		<DefineConstants>TRACE;DEBUG;USE_MOCKS</DefineConstants>
+		<NoWarn>1304</NoWarn>
+		<DebugType>full</DebugType>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<ErrorReport>prompt</ErrorReport>
+		<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="AppData\AppMessages.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>AppMessages.resx</DependentUpon>
+		</Compile>
+		<Compile Include="AppData\AppResources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>AppResources.resx</DependentUpon>
+		</Compile>
+		<Compile Include="Controls\HintsEntry.cs" />
+		<Compile Include="Converters\CurrentScoreConverter.cs" />
+		<Compile Include="Converters\EnumConverter.cs" />
+		<Compile Include="Converters\KeyboardHintTypeConverter.cs" />
+		<Compile Include="Converters\PictureImageSourceConverter.cs" />
+		<Compile Include="Converters\PictureThumbnailImageSourceConverter.cs" />
+		<Compile Include="Converters\PreviousValueConverter.cs" />
+		<Compile Include="Extensions\ApiToLocalModelExtensions.cs" />
+		<Compile Include="Extensions\ImageSourceExtensions.cs" />
+		<Compile Include="Helpers\CommonApiClientOptions.cs" />
+		<Compile Include="Helpers\CRWriterUserNotFoundException.cs" />
+		<Compile Include="Helpers\IFeedbackManager.cs" />
+		<Compile Include="Helpers\InspectionListGroup.cs" />
+		<Compile Include="Helpers\InspectionState.cs" />
+		<Compile Include="Helpers\LocalInspectionNotFoundException.cs" />
+		<Compile Include="Helpers\ObjectNotFoundException.cs" />
+		<Compile Include="Helpers\RelayCommand.cs" />
+		<Compile Include="Helpers\VehicleNotFoundException.cs" />
+		<Compile Include="Models\CurrentObject.cs" />
+		<Compile Include="Models\InspectionMasterRecord.cs" />
+		<Compile Include="Models\LocalInspectionCategory.cs" />
+		<Compile Include="Models\LocalInspectionMaster.cs" />
+		<Compile Include="Models\Picture.cs" />
+		<Compile Include="Models\VehicleRecordAvailableInspectionMasterRecord.cs" />
+		<Compile Include="Models\VehicleRecordAvailableInspectionTypeRecord.cs" />
+		<Compile Include="Xaml\TranslateExtension.cs" />
+		<Compile Include="Extensions\VehicleExtensions.cs" />
+		<Compile Include="Helpers\Constants.cs" />
+		<Compile Include="Helpers\InspectionWriterApiException.cs" />
+		<Compile Include="Helpers\InspectionWriterClient.cs" />
+		<Compile Include="Helpers\KeyboardHints.cs" />
+		<Compile Include="Helpers\KeyboardHintType.cs" />
+		<Compile Include="Helpers\NPADefinitions.cs" />
+		<Compile Include="Helpers\SearchType.cs" />
+		<Compile Include="Helpers\Settings.cs" />
+		<Compile Include="Models\AppRepository.cs" />
+		<Compile Include="Models\InspectionTypeRecord.cs" />
+		<Compile Include="Models\LocalInspection.cs" />
+		<Compile Include="Models\OfflineUserAuthentication.cs" />
+		<Compile Include="Models\VehicleAlertRecord.cs" />
+		<Compile Include="Models\VehicleRecord.cs" />
+		<Compile Include="Models\VinAlertRecord.cs" />
+		<Compile Include="Models\CRWriterUser.cs" />
+		<Compile Include="Models\InspectionTypesAndMasters.cs" />
+		<Compile Include="Services\AAAService.cs" />
+		<Compile Include="Services\EmailService.cs" />
+		<Compile Include="Services\IEmailService.cs" />
+		<Compile Include="Services\IInspectionsService.cs" />
+		<Compile Include="Services\ILogService.cs" />
+		<Compile Include="Services\InspectionsService.cs" />
+		<Compile Include="Services\LogService.cs" />
+		<Compile Include="Services\Mocks\AAAServiceMock.cs" />
+		<Compile Include="Services\IAAAService.cs" />
+		<Compile Include="Services\IImageUploadService.cs" />
+		<Compile Include="Services\ImageUploadService.cs" />
+		<Compile Include="Services\IPrintService.cs" />
+		<Compile Include="Services\IVehicleService.cs" />
+		<Compile Include="Services\Mocks\EmailServiceMock.cs" />
+		<Compile Include="Services\Mocks\ImageUploadServiceMock.cs" />
+		<Compile Include="Services\Mocks\InspectionsServiceMock.cs" />
+		<Compile Include="Services\Mocks\LogServiceMock.cs" />
+		<Compile Include="Services\PrintService.cs" />
+		<Compile Include="Services\Mocks\PrintServiceMock.cs" />
+		<Compile Include="Services\Mocks\VehicleServiceMock.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="Services\VehicleService.cs" />
+		<Compile Include="ViewModels\CRWriterBase.cs" />
+		<Compile Include="Controls\BarcodeScannerView.cs" />
+		<Compile Include="ViewModels\BaseViewModel.cs" />
+		<Compile Include="ViewModels\LoginPageViewModel.cs" />
+		<Compile Include="Resx\ModuleResources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>ModuleResources.resx</DependentUpon>
+		</Compile>
+		<Compile Include="Models\AmsUser.cs" />
+		<Compile Include="Models\DeviceRegistration.cs" />
+		<Compile Include="Models\Error.cs" />
+		<Compile Include="Models\Inspection.cs" />
+		<Compile Include="Models\InspectionCategory.cs" />
+		<Compile Include="Models\InspectionImage.cs" />
+		<Compile Include="Models\InspectionItem.cs" />
+		<Compile Include="Models\InspectionMaster.cs" />
+		<Compile Include="Models\InspectionOption.cs" />
+		<Compile Include="Models\InspectionSearchRequest.cs" />
+		<Compile Include="Models\InspectionType.cs" />
+		<Compile Include="Models\Location.cs" />
+		<Compile Include="Models\Locations.cs" />
+		<Compile Include="Models\LoginRequest.cs" />
+		<Compile Include="Models\Message.cs" />
+		<Compile Include="Models\Printer.cs" />
+		<Compile Include="Models\ReportFile.cs" />
+		<Compile Include="Models\ReportRequest.cs" />
+		<Compile Include="Models\SearchRequest.cs" />
+		<Compile Include="Models\Setting.cs" />
+		<Compile Include="Models\SPCreateSessionToken.cs" />
+		<Compile Include="Models\Vehicle.cs" />
+		<Compile Include="Models\VehicleBrand.cs" />
+		<Compile Include="Models\VehicleCategory.cs" />
+		<Compile Include="Models\VehicleModel.cs" />
+		<Compile Include="Models\VehicleSearchRequest.cs" />
+		<Compile Include="Extensions\EnumExtenstions.cs" />
+		<Compile Include="Extensions\ReportFileExtensions.cs" />
+		<Compile Include="Helpers\DisplayTextAttribute.cs" />
+		<Compile Include="Helpers\ReportFileNameAttribute.cs" />
+		<Compile Include="EventArgs.cs" />
+		<Compile Include="Device\AccelerometerInterval.cs" />
+		<Compile Include="Device\DeviceExtensions.cs" />
+		<Compile Include="Device\DisplayExtensions.cs" />
+		<Compile Include="Device\IAccelerometer.cs" />
+		<Compile Include="Device\IBattery.cs" />
+		<Compile Include="Device\IBluetoothDevice.cs" />
+		<Compile Include="Device\IBluetoothHub.cs" />
+		<Compile Include="Device\IDevice.cs" />
+		<Compile Include="Device\IDisplay.cs" />
+		<Compile Include="Device\IGyroscope.cs" />
+		<Compile Include="Device\ISensor.cs" />
+		<Compile Include="Device\Orientation.cs" />
+		<Compile Include="Converters\ByteArrayToImageSourceConverter.cs" />
+		<Compile Include="Converters\DoubleRoundingConverter.cs" />
+		<Compile Include="Converters\DoubleToStringConverter.cs" />
+		<Compile Include="Converters\EnumToHumanizedStringConverter.cs" />
+		<Compile Include="Converters\ImageSourceConverter.cs" />
+		<Compile Include="Converters\SelectedItemEventArgsToSelectedItemConverter.cs" />
+		<Compile Include="Converters\StringFormatBaseConverter.cs" />
+		<Compile Include="Caching\CachingAgent.cs" />
+		<Compile Include="Caching\IAsyncCacheProvider.cs" />
+		<Compile Include="Caching\IAsyncSimpleCache.cs" />
+		<Compile Include="Caching\ICacheProvider.cs" />
+		<Compile Include="Caching\ISimpleCache.cs" />
+		<Compile Include="Caching\SimpleCacheProvider.cs" />
+		<Compile Include="Behaviors\BehaviorBase{T}.cs" />
+		<Compile Include="Behaviors\EventToCommandBehavior.cs" />
+		<Compile Include="Behaviors\ValidateVinBehavior.cs" />
+		<Compile Include="DTO\BaseDTO.cs" />
+		<Compile Include="DTO\InspectionDTO.cs" />
+		<Compile Include="DTO\InspectionItemDTO.cs" />
+		<Compile Include="DTO\InspectionOptionDTO.cs" />
+		<Compile Include="DTO\PagingInfoDTO.cs" />
+		<Compile Include="DTO\TitleDTO.cs" />
+		<Compile Include="DTO\VehicleDTO.cs" />
+		<Compile Include="Helpers\AcrHelpers.cs" />
+		<Compile Include="Helpers\AppInfo.cs" />
+		<Compile Include="Helpers\AppLocale.cs" />
+		<Compile Include="Helpers\AsyncHelpers.cs" />
+		<Compile Include="Helpers\DescriptionAttribute.cs" />
+		<Compile Include="Helpers\IApplicationFileSystem.cs" />
+		<Compile Include="Helpers\ILocale.cs" />
+		<Compile Include="Helpers\ImageOrientation.cs" />
+		<Compile Include="Helpers\ImageResourceExtension.cs" />
+		<Compile Include="Helpers\MediaFileHelpers.cs" />
+		<Compile Include="Helpers\MediaFileNotFoundException.cs" />
+		<Compile Include="Helpers\NPAConstants.cs" />
+		<Compile Include="Helpers\NPADependencyService.cs" />
+		<Compile Include="Helpers\NPALocation.cs" />
+		<Compile Include="Helpers\ObservableStack.cs" />
+		<Compile Include="Helpers\PlaceholderAttribute.cs" />
+		<Compile Include="Helpers\RuntimeEnvironment.cs" />
+		<Compile Include="Helpers\TaskUtils.cs" />
+		<Compile Include="Helpers\ToastType.cs" />
+		<Compile Include="Helpers\TryAction.cs" />
+		<Compile Include="Helpers\UserLevel.cs" />
+		<Compile Include="Helpers\Vector3.cs" />
+		<Compile Include="Helpers\VehicleHelpers.cs" />
+		<Compile Include="Http\CommonApiApi\Auction.cs" />
+		<Compile Include="Http\CommonApiApi\AuctionLane.cs" />
+		<Compile Include="Http\CommonApiApi\AuctionQcCheck.cs" />
+		<Compile Include="Http\CommonApiApi\CheckConnectionController.cs" />
+		<Compile Include="Http\CommonApiApi\LoginController.cs" />
+		<Compile Include="Http\CommonApiApi\VinController.cs" />
+		<Compile Include="Http\CommonApiClient.cs" />
+		<Compile Include="Http\ICommonApiClientOptions.cs" />
+		<Compile Include="Http\JsonContent.cs" />
+		<Compile Include="Http\UnauthorizedAccessWebException.cs" />
+		<Compile Include="Logging\DebugLog.cs" />
+		<Compile Include="Logging\Facility.cs" />
+		<Compile Include="Logging\ILog.cs" />
+		<Compile Include="Logging\ILogExtensions.cs" />
+		<Compile Include="Logging\ISysLogLogger.cs" />
+		<Compile Include="Logging\IUdpLoggerConfiguration.cs" />
+		<Compile Include="Logging\Level.cs" />
+		<Compile Include="Logging\StaticLogger.cs" />
+		<Compile Include="Logging\SysLogMessage.cs" />
+		<Compile Include="Logging\UdpLoggerBase.cs" />
+		<Compile Include="Models\DatabaseConnectionFactoryBase.cs" />
+		<Compile Include="Models\EntityType.cs" />
+		<Compile Include="Models\ExtendedSQLiteConnection.cs" />
+		<Compile Include="Models\IDatabaseConnectionFactory.cs" />
+		<Compile Include="Models\IDatabaseRecord.cs" />
+		<Compile Include="Models\LoginResponse.cs" />
+		<Compile Include="Models\OSSCredit.cs" />
+		<Compile Include="Models\OSSLicense.cs" />
+		<Compile Include="Models\VehicleDetail.cs" />
+		<Compile Include="Services\CameraDevice.cs" />
+		<Compile Include="Services\CameraMediaStorageOptions.cs" />
+		<Compile Include="Services\FileAccess.cs" />
+		<Compile Include="Services\FileMode.cs" />
+		<Compile Include="Services\FileShare.cs" />
+		<Compile Include="Services\IFileManager.cs" />
+		<Compile Include="Services\IMediaPicker.cs" />
+		<Compile Include="Services\INetwork.cs" />
+		<Compile Include="Services\ISecureStorage.cs" />
+		<Compile Include="Services\IUdpMessenger.cs" />
+		<Compile Include="Services\MediaFile.cs" />
+		<Compile Include="Services\MediaPickerArgs.cs" />
+		<Compile Include="Services\MediaPickerErrorArgs.cs" />
+		<Compile Include="Services\MediaStorageOptions.cs" />
+		<Compile Include="Services\NetworkStatus.cs" />
+		<Compile Include="Services\VideoMediaStorageOptions.cs" />
+		<Compile Include="Services\VideoQuality.cs" />
+		<Compile Include="Device\Accelerometer.cs" />
+		<Compile Include="Device\Battery.cs" />
+		<Compile Include="Device\Gyroscope.cs" />
+		<Compile Include="Extensions\ApplicationExtensions.cs" />
+		<Compile Include="Extensions\ArrayExtensions.cs" />
+		<Compile Include="Extensions\DateTimeExtensions.cs" />
+		<Compile Include="Extensions\EventExtensions.cs" />
+		<Compile Include="Extensions\GridExtensions.cs" />
+		<Compile Include="Extensions\HttpClientExtensions.cs" />
+		<Compile Include="Extensions\HttpRequestHeadersExtensions.cs" />
+		<Compile Include="Extensions\IApplicationFileSystemExtensions.cs" />
+		<Compile Include="Extensions\IDictionaryExtensions.cs" />
+		<Compile Include="Extensions\IEnumerableExtensions.cs" />
+		<Compile Include="Extensions\IListExtensions.cs" />
+		<Compile Include="Extensions\MediaExtensions.cs" />
+		<Compile Include="Extensions\NumericExtensions.cs" />
+		<Compile Include="Extensions\ObservableCollectionExtensions.cs" />
+		<Compile Include="Extensions\ParsingExtensions.cs" />
+		<Compile Include="Extensions\SQLiteAsyncConnectionExtensions.cs" />
+		<Compile Include="Extensions\StringExtensions.cs" />
+		<Compile Include="Extensions\TaskExtensions.cs" />
+		<Compile Include="Controls\NoHelpEntry.cs" />
+		<Compile Include="Views\Pages\LoginPage.xaml.cs">
+			<DependentUpon>LoginPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Layouts\LoginForm.xaml.cs">
+			<DependentUpon>LoginForm.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\NPABasePage.cs" />
+		<Compile Include="Views\Pages\VehicleSearchPage.xaml.cs">
+			<DependentUpon>VehicleSearchPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Controls\SegmentedControl.cs" />
+		<Compile Include="ViewModels\VehicleSearchViewModel.cs" />
+		<Compile Include="Controls\SegmentedControlOption.cs" />
+		<Compile Include="Controls\ExtendedSearchBar.cs" />
+		<Compile Include="Controls\ImageButton.cs" />
+		<Compile Include="Views\Pages\VehicleDetailsPage.xaml.cs">
+		  <DependentUpon>VehicleDetailsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="ViewModels\VehicleDetailsViewModel.cs" />
+		<Compile Include="Views\Layouts\Separator.cs" />
+		<Compile Include="Views\Pages\VehicleDetailTabbedPage.xaml.cs">
+		  <DependentUpon>VehicleDetailTabbedPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Helpers\ObservableGroupCollection.cs" />
+		<Compile Include="Models\InspectionDisplayList.cs" />
+		<Compile Include="Views\Pages\LocalInspectionsPage.xaml.cs">
+		  <DependentUpon>LocalInspectionsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="ViewModels\LocalInspectionsViewModel.cs" />
+		<Compile Include="Controls\LocalInspectionCellSelector.cs" />
+		<Compile Include="Views\Layouts\PendingLocalInspectionItemRow.xaml.cs">
+		  <DependentUpon>PendingLocalInspectionItemRow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Layouts\DefaultLocalInspectionItemRow.xaml.cs">
+		  <DependentUpon>DefaultLocalInspectionItemRow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Layouts\BaseLocalInspectionItemRow.cs" />
+		<Compile Include="Converters\InverseBoolConverter.cs" />
+		<Compile Include="Views\Pages\VehicleDetailCommentsPage.cs">
+		  <DependentUpon>VehicleDetailCommentsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Layouts\HtmlLabel.cs" />
+		<Compile Include="Views\Layouts\VehicleDetailsContentView.xaml.cs">
+		  <DependentUpon>VehicleDetailsContentView.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Layouts\VehicleDetailsHeaderContent.xaml.cs">
+		  <DependentUpon>VehicleDetailsHeaderContent.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Helpers\SessionExpiredException.cs" />
+		<Compile Include="Views\Pages\EmailPopupPage.xaml.cs">
+		  <DependentUpon>EmailPopupPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="ViewModels\EmailViewModel.cs" />
+		<Compile Include="Views\NPABaseTabbedPage.cs" />
+		<Compile Include="Views\Pages\PrintersListPage.xaml.cs">
+		  <DependentUpon>PrintersListPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Models\PrinterModel.cs" />
+		<Compile Include="Views\Pages\VehicleSearchListPage.xaml.cs">
+		  <DependentUpon>VehicleSearchListPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="ViewModels\VehicleSearchListViewModel.cs" />
+		<Compile Include="Converters\StringToImageSourceConverter.cs" />
+		<Compile Include="Views\Layouts\VehicleSearchItemRow.xaml.cs">
+		  <DependentUpon>VehicleSearchItemRow.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pages\TestPage.xaml.cs">
+		  <DependentUpon>TestPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="ViewModels\TestViewModel.cs" />
+		<Compile Include="Views\Pages\ImageGalleryPage.cs" />
+		<Compile Include="Views\Pages\InspectionTabbedPage.xaml.cs">
+		  <DependentUpon>InspectionTabbedPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pages\InspectionOverviewPage.xaml.cs">
+		  <DependentUpon>InspectionOverviewPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Pages\InspectionOptionsPage.xaml.cs">
+		  <DependentUpon>InspectionOptionsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Converters\NAConverter.cs" />
+		<Compile Include="Behaviors\EntryMaxLengthBehavior.cs" />
+		<Compile Include="Controls\CameraView.cs" />
+		<Compile Include="Views\Pages\CameraPage.cs" />
+		<Compile Include="Views\Pages\CameraModal.cs" />
+		<Compile Include="Views\Pages\EmailPage.xaml.cs">
+		  <DependentUpon>EmailPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="Views\Layouts\EmailLayout.xaml.cs">
+		  <DependentUpon>EmailLayout.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="ViewModels\InspectionTabbedPageViewModel.cs" />
+		<Compile Include="ViewModels\ImageGalleryViewModel.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="App.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<Compile Include="App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<EmbeddedResource Include="Resx\ModuleResources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>ModuleResources.Designer.cs</LastGenOutput>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Assets\barcode_35x35.png" />
+		<EmbeddedResource Include="Assets\cancel.png" />
+		<EmbeddedResource Include="Assets\no-image.jpg" />
+		<EmbeddedResource Include="Assets\NPALogo.png" />
+		<EmbeddedResource Include="Assets\red-cancel-37x37.png" />
+		<EmbeddedResource Include="Views\Pages\LoginPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\LoginForm.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\VehicleSearchPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\VehicleDetailsPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\VehicleDetailTabbedPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\LocalInspectionsPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\PendingLocalInspectionItemRow.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\DefaultLocalInspectionItemRow.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\VehicleDetailCommentsPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\VehicleDetailsContentView.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\VehicleDetailsHeaderContent.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\EmailPopupPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\PrintersListPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\VehicleSearchListPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\VehicleSearchItemRow.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\TestPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\InspectionTabbedPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\InspectionOverviewPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\InspectionOptionsPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Pages\EmailPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Views\Layouts\EmailLayout.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Badge.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\Xam.Plugin.Badge.1.0.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Badge.Plugin.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Badge.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\Xam.Plugin.Badge.1.0.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Badge.Plugin.Abstractions.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\SQLite.Net-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="SQLite.Net.Async, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\..\packages\SQLite.Net.Async-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.Async.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="MvvmHelpers">
+			<HintPath>..\..\packages\Refractored.MvvmHelpers.1.3.0\lib\netstandard1.0\MvvmHelpers.dll</HintPath>
+		</Reference>
+		<Reference Include="HockeySDK">
+			<HintPath>..\..\packages\HockeySDK.Xamarin.4.1.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\HockeySDK.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Plugin.Battery.Abstractions">
+			<HintPath>..\..\packages\Xam.Plugin.Battery.2.1.1\lib\portable-net45+wp80+win8+wpa81\Plugin.Battery.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Plugin.Battery">
+			<HintPath>..\..\packages\Xam.Plugin.Battery.2.1.1\lib\portable-net45+wp80+win8+wpa81\Plugin.Battery.dll</HintPath>
+		</Reference>
+		<Reference Include="Plugin.Connectivity.Abstractions">
+			<HintPath>..\..\packages\Xam.Plugin.Connectivity.2.3.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Plugin.Connectivity">
+			<HintPath>..\..\packages\Xam.Plugin.Connectivity.2.3.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.dll</HintPath>
+		</Reference>
+		<Reference Include="Plugin.Media.Abstractions">
+			<HintPath>..\..\packages\Xam.Plugin.Media.2.6.2\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Plugin.Media">
+			<HintPath>..\..\packages\Xam.Plugin.Media.2.6.2\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
+		</Reference>
+		<Reference Include="Xamarin.Forms.Core">
+			<HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Xamarin.Forms.Platform">
+			<HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+		</Reference>
+		<Reference Include="Xamarin.Forms.Xaml">
+			<HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+		</Reference>
+		<Reference Include="Rg.Plugins.Popup">
+			<HintPath>..\..\packages\Rg.Plugins.Popup.1.1.0-pre2\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.dll</HintPath>
+		</Reference>
+		<Reference Include="Rg.Plugins.Popup.Platform">
+			<HintPath>..\..\packages\Rg.Plugins.Popup.1.1.0-pre2\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Net.Http">
+		  <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Net.Http.Extensions">
+		  <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Net.Http.Primitives">
+		  <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+		</Reference>
+		<Reference Include="Splat">
+		  <HintPath>..\..\packages\Splat.1.6.2\lib\Portable-net45+win+wpa81+wp80\Splat.dll</HintPath>
+		</Reference>
+		<Reference Include="Acr.UserDialogs">
+		  <HintPath>..\..\packages\Acr.UserDialogs.6.2.4\lib\portable-win+net45+wp8+win8+wpa81\Acr.UserDialogs.dll</HintPath>
+		</Reference>
+		<Reference Include="Acr.UserDialogs.Interface">
+		  <HintPath>..\..\packages\Acr.UserDialogs.6.2.4\lib\portable-win+net45+wp8+win8+wpa81\Acr.UserDialogs.Interface.dll</HintPath>
+		</Reference>
+		<Reference Include="NPA.CodeGen">
+		  <HintPath>..\..\..\NPA.CodeGen\Build\NPA.CodeGen.dll</HintPath>
+		</Reference>
+		<Reference Include="DLToolkit.Forms.Controls.FlowListView">
+		  <HintPath>..\..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="AppData\AppMessages.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<EmbeddedResource Include="AppData\AppResources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<EmbeddedResource Include="AppData\NPADefinitions.json" />
+		<None Include="app.config" />
+		<None Include="packages.config" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Icons\comments-icon.png" />
+		<EmbeddedResource Include="Assets\Icons\inspection-detail-camera-tab-icon.png" />
+		<EmbeddedResource Include="Assets\Icons\inspection-detail-gallery-tab-icon.png" />
+		<EmbeddedResource Include="Assets\Icons\inspection-detail-options-tab-icon.png" />
+		<EmbeddedResource Include="Assets\Icons\inspection-detail-tab-1.png" />
+		<EmbeddedResource Include="Assets\Icons\inspection-list.png" />
+		<EmbeddedResource Include="Assets\Icons\list_tab_icon.png" />
+		<EmbeddedResource Include="Assets\Icons\not-uploaded-icon-111x111.png" />
+		<EmbeddedResource Include="Assets\Icons\not-uploaded-icon-25x34.png" />
+		<EmbeddedResource Include="Assets\Icons\not-uploaded-icon-50x68.png" />
+		<EmbeddedResource Include="Assets\Icons\on-device-icon-25x25.png" />
+		<EmbeddedResource Include="Assets\Icons\on-device-icon-25x30.png" />
+		<EmbeddedResource Include="Assets\Icons\on-device-icon-50x60.png" />
+		<EmbeddedResource Include="Assets\Icons\pause-blue-18x23.png" />
+		<EmbeddedResource Include="Assets\Icons\pause-blue-24x31.png" />
+		<EmbeddedResource Include="Assets\Icons\photo_add.png" />
+		<EmbeddedResource Include="Assets\Icons\red-cancel-37x37.png" />
+		<EmbeddedResource Include="Assets\Icons\rotation-locked.png" />
+		<EmbeddedResource Include="Assets\Icons\rotation-unlocked.png" />
+		<EmbeddedResource Include="Assets\Icons\send-message.png" />
+		<EmbeddedResource Include="Assets\Icons\upload-blue-22x30.png" />
+		<EmbeddedResource Include="Assets\Icons\upload-blue-34x46.png" />
+		<EmbeddedResource Include="Assets\Icons\upload_tab_icon.png" />
+		<EmbeddedResource Include="Assets\Icons\white-checkmark-37x37.png" />
+		<EmbeddedResource Include="Assets\Images\no-image.jpg" />
+		<EmbeddedResource Include="Assets\Images\no-image.png" />
+		<EmbeddedResource Include="Assets\Images\NPAHugeLogo.png" />
+		<EmbeddedResource Include="Assets\Images\NPALogo.png" />
+		<EmbeddedResource Include="Assets\Images\splash1-4inch.png" />
+		<EmbeddedResource Include="Assets\Images\splash1-iPad.png" />
+		<EmbeddedResource Include="Assets\Images\splash1-Retina.png" />
+		<EmbeddedResource Include="Assets\Images\splash1.png" />
+		<EmbeddedResource Include="Assets\SpinnerBg%402x.png" />
+		<EmbeddedResource Include="Assets\SpinnerBg.png" />
+		<EmbeddedResource Include="Assets\UploadProgressBg%402x.png" />
+		<EmbeddedResource Include="Assets\UploadProgressBg.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Resx\" />
+		<Folder Include="Device\" />
+		<Folder Include="Caching\" />
+		<Folder Include="Behaviors\" />
+		<Folder Include="DTO\" />
+		<Folder Include="Http\" />
+		<Folder Include="Logging\" />
+		<Folder Include="Events\" />
+		<Folder Include="Views\Pages\" />
+		<Folder Include="Views\Layouts\" />
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+	<Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

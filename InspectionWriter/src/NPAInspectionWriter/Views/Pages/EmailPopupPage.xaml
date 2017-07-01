@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Pages.EmailPopupPage" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:npaLayouts="clr-namespace:NPAInspectionWriter.Views.Layouts;assembly=NPAInspectionWriter">
+     <pages:PopupPage.Animation>
+    <animations:ScaleAnimation 
+      PositionIn="Center"
+      PositionOut="Center"
+      ScaleIn="1.2"
+      ScaleOut="0.8"
+      DurationIn="400"
+      DurationOut="300"
+      EasingIn="SinOut"
+      EasingOut="SinIn"
+      HasBackgroundAnimation="True"/>
+  </pages:PopupPage.Animation>
+    <pages:PopupPage.Content>
+        <Frame HeightRequest="800" 
+            WidthRequest="675" 
+            Margin="10" 
+            Padding="0" 
+            CornerRadius = "4" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center">
+            <StackLayout>
+                <ContentView BackgroundColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="50" Padding="5">
+                    <Label Margin="10" Text="Cancel" HorizontalOptions="EndAndExpand" VerticalOptions="Start" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CancelCommand}" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </ContentView>
+                <npaLayouts:EmailLayout />
+            </StackLayout>
+        </Frame>
+
+	</pages:PopupPage.Content>
+</pages:PopupPage>

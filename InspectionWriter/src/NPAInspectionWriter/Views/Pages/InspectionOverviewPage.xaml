@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Pages.InspectionOverviewPage" xmlns:npabehaviors="clr-namespace:NPAInspectionWriter.Behaviors;assembly=NPAInspectionWriter" Title="Editing Inspection">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" BackgroundColor="Black" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" WidthRequest="768">
+                <Label Grid.ColumnSpan="2" TextColor="White" Text="{Binding CurrentInspection.Score, StringFormat='Current Score: {0}'}" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <TableView Intent="Form" Grid.Row="1" Grid.ColumnSpan="2" HasUnevenRows="true" RowHeight="50">
+                <TableView.Root>
+                    <TableSection Title="VEHICLE DETAILS">
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Stock Number" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.StockNumber, Mode=TwoWay}" Keyboard="Numeric" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="VIN" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.Vin, Mode=TwoWay}" HorizontalTextAlignment="End" IsEnabled="true">
+                                    <Entry.Behaviors>
+                                        <npabehaviors:EntryMaxLengthBehavior MaxLength="17" />
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Year" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.Year, Mode=TwoWay}" Keyboard="Numeric" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Make" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.Brand, Mode=TwoWay}" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Model" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.Model, Mode=TwoWay}" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Size" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.Size, Mode=TwoWay, Converter={StaticResource naConverter}}" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Color" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.Color, Mode=TwoWay}" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell StyleId="none">
+                            <Grid VerticalOptions="CenterAndExpand" Margin="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Miles/Hours" />
+                                <Entry Grid.Column="1" Text="{Binding CurrentInspection.Vehicle.MilesHours, Mode=TwoWay}" IsEnabled="{Binding CurrentInspection.AllowEditing}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="INSPECTION TYPE">
+                        <ViewCell StyleId="none">
+                            <Label VerticalTextAlignment="Center" Text="Post Inspection" Margin="5,0,5,0" />
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="INSPECTION MASTER">
+                        <ViewCell StyleId="none">
+                            <Label VerticalTextAlignment="Center" Text="{Binding CurrentInspection.MasterDisplayName}" Margin="5,0,5,0" />
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="INSPECTION COMMENTS">
+                        <ViewCell StyleId="none" Height="200">
+                            <Editor Text="{Binding CurrentInspection.Comments, Mode=TwoWay}" IsEnabled="{Binding CurrentInspection.AllowEditing}" HeightRequest="300" />
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="OPEN REPAIR">
+                        <SwitchCell Text="Open a repair" IsEnabled="{Binding CurrentInspection.AllowEditing}" On="{Binding CurrentInspection.OpenRepair, Mode=TwoWay}" />
+                    </TableSection>
+                </TableView.Root>
+            </TableView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

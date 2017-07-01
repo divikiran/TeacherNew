@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npaview:NPABasePage Padding="15" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Pages.VehicleDetailsPage" xmlns:npa="clr-namespace:NPAInspectionWriter;assembly=NPAInspectionWriter" xmlns:npaview="clr-namespace:NPAInspectionWriter.Views;assembly=NPAInspectionWriter" Title="Inspections">
+    <npaview:NPABasePage.Content>
+        <StackLayout Padding="10">
+            <npa:VehicleDetailsHeaderContent />
+            <npa:Separator BackgroundColor="Gray" />
+            <StackLayout Spacing="0">
+                <Grid Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*" />
+                        <RowDefinition Height="60*" />
+                    </Grid.RowDefinitions>
+                    <npa:VehicleDetailsContentView Grid.Row="0" Grid.Column="0" />
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <npa:Separator BackgroundColor="Black" />
+                        <Button Text="Create Inspection" HorizontalOptions="End" BackgroundColor="Transparent" IsEnabled="{Binding AllowNewInspections}" Command="{Binding CreateInspectionCommand}" />
+                        <ListView ItemsSource="{Binding AvailableInspectionsList}" ItemSelected="InspectionSelected" IsGroupingEnabled="true" HasUnevenRows="True" SeparatorVisibility="Default">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Text}" Detail="{Binding DetailsText}" />
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.GroupHeaderTemplate>
+                                <DataTemplate>
+                                    <ViewCell Height="40" StyleId="none">
+                                        <StackLayout BackgroundColor="Gray">
+                                            <Label Text="{Binding Key}" TextColor="White" FontSize="Medium" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Margin="20,0,0,0" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.GroupHeaderTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </npaview:NPABasePage.Content>
+</npaview:NPABasePage>

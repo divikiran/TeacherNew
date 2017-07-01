@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:npa="clr-namespace:NPAInspectionWriter.Views.Pages;assembly=NPAInspectionWriter" x:Class="NPAInspectionWriter.Views.Pages.InspectionTabbedPage" x:Name="InspectionTabbedPage" Title="{Binding Title}">
+    <TabbedPage.Children>
+        <npa:InspectionOverviewPage Title="Overview" Icon="Icons/inspection-detail-overview-tab-icon.png" x:Name="OverviewPage"/>
+        <npa:CameraPage x:Name="InspectionCameraPage" Title="Camera" IsEnabled="{Binding CurrentInspection.AllowEditing}" Icon="Icons/inspection-detail-camera-tab-icon.png"/>
+        <npa:ImageGalleryPage x:Name="InspectionGalleryPage" Title="Gallery" Icon="Icons/inspection-detail-gallery-tab-icon.png"/>
+        <npa:InspectionOptionsPage x:Name="InspectionOptionsPage" Title="Options" Icon="Icons/inspection-detail-options-tab-icon.png"/>
+    </TabbedPage.Children>
+</TabbedPage>

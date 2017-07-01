@@ -1,0 +1,56 @@
+﻿{
+  "ApiEndpoints": {
+    // San Diego
+    "c4b1d148-57e2-4fd2-9dae-0121d40854a0": "https://inspectionwritersan.npauctions.com",
+    // Atlanta
+    "bcaa6410-dc7c-4970-b815-703f1027d574": "https://inspectionwriteratl.npauctions.com",
+    // Cincinnati
+    "1bfcb8d2-0bbf-dc11-ade2-0019b9b35da2": "https://inspectionwritercin.npauctions.com",
+    // Dallas
+    "744abc97-d2a1-4eb5-9d8f-265eb86c18bb": "https://inspectionwriterdal.npauctions.com",
+    // Philadelphia
+    "8F7750F9-B5F2-49C5-B972-8245602E06C0": "https://inspectionwriterphl.npauctions.com"
+  },
+    "Comments": {
+        "General": [
+            "Aftermarket",
+            "Chips",
+            "Repainted",
+            "All Over",
+            "Rusted",
+            "Bent",
+            "Broken",
+            "Cannot Test",
+            "Corrosion",
+            "Dented",
+            "Missing",
+            "Minor",
+            "Light",
+            "Heavy",
+            "Scratches",
+            "Stained",
+            "Condensation in oil"
+        ],
+        "Tire": [
+            "Bald",
+            "1/32",
+            "2/32",
+            "3/32",
+            "4/32",
+            "5/32",
+            "6/32",
+            "7/32",
+            "8/32",
+            "9/32",
+            "10/32",
+            "11/32",
+            "12/32",
+            "13/32",
+            "14/32",
+            "15/32",
+            "16/32",
+            "Dry Rot",
+            "Plugged"
+        ]
+    }
+}

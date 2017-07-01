@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npa:NPABasePage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="NPAInspectionWriter.Views.Pages.LocalInspectionsPage" 
+    xmlns:controls="clr-namespace:NPAInspectionWriter.Controls;assembly=NPAInspectionWriter" 
+    xmlns:npa="clr-namespace:NPAInspectionWriter.Views;assembly=NPAInspectionWriter" 
+    xmlns:layouts="clr-namespace:NPAInspectionWriter.Views.Layouts;assembly=NPAInspectionWriter" 
+    x:Name="localInspectionPage" 
+    Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+                
+          <DataTemplate x:Key="defaultCell">
+            <layouts:DefaultLocalInspectionItemRow InspectionType="{Binding InspectionType}"
+                                             InspectionDate="{Binding InspectionDate}"
+                                             Score="{Binding Score}"
+                                             PhotoCount="{Binding Path=Pictures.Count}"
+                                             StockNumber="{Binding StockNumber}"
+                                             YearMake="{Binding YearMake}"
+                                             Model="{Binding Model}" />
+          </DataTemplate>
+                
+          <DataTemplate x:Key="pendingUploadCell">
+            <layouts:PendingLocalInspectionItemRow InspectionType="{Binding InspectionType}"
+                                                       InspectionDate="{Binding InspectionDate}"
+                                                       Score="{Binding Score}"
+                                                       InspectionId="{Binding InspectionId}"
+                                                       PhotoCount="{Binding Path=Pictures.Count}"
+                                                       StockNumber="{Binding StockNumber}"
+                                                       YearMake="{Binding YearMake}"
+                                                       Model="{Binding Model}"
+                                                       CommandParameter="{Binding .}"/>
+          </DataTemplate>
+                
+          <controls:LocalInspectionCellSelector x:Key="localInspectionSelector"
+                                                Default="{StaticResource defaultCell}"
+                                                PendingUpload="{StaticResource pendingUploadCell}" />
+        </ResourceDictionary>
+      </ContentPage.Resources>
+    <npa:NPABasePage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition>*</RowDefinition>
+                <RowDefinition>Auto</RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                
+               <controls:SegmentedControl x:Name="SearchTypeControl"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    SelectedValue="{Binding ListSortMethod}"
+                    Margin="0,15,0,5">
+                    <controls:SegmentedControl.Children>
+                        <controls:SegmentedControlOption Text="All" SegmentWidth="150"/>
+                        <controls:SegmentedControlOption Text="Incomplete" SegmentWidth="150" IsSegmentEnabled="{Binding IncompleteExist}"/>
+                        <controls:SegmentedControlOption Text="Pending Upload" SegmentWidth="150" IsSegmentEnabled="{Binding PendingExist}"/>
+                        <controls:SegmentedControlOption Text="Failed Upload" SegmentWidth="150" IsSegmentEnabled="{Binding FailedExist}"/>
+                    </controls:SegmentedControl.Children>
+                </controls:SegmentedControl>
+
+                <BoxView HorizontalOptions="FillAndExpand" 
+                    HeightRequest="1" BackgroundColor="Black"/>
+                
+                <Label Text="No Local Inspections Exist" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" 
+                    FontSize="Large" 
+                    IsVisible="{Binding InspectionsExist,  
+                                            Converter={StaticResource inverter}}" />
+                
+                <ListView 
+                    RowHeight="90"  
+                    ItemsSource="{Binding Inspections}" 
+                    x:Name="LocalInspectionsListView" 
+                    VerticalOptions="StartAndExpand" 
+                    HorizontalOptions="FillAndExpand" 
+                    ItemTemplate="{StaticResource localInspectionSelector}">
+                </ListView>
+                
+            </StackLayout>
+            
+            <BoxView Grid.Row="1" Grid.Column="0" HeightRequest="50" Color="Black" Opacity="0.75" IsVisible="{Binding ShowProgressIndicator}" VerticalOptions="End"/>
+            <StackLayout Grid.Row="1" Grid.Column="0" HeightRequest="40" IsVisible="{Binding ShowProgressIndicator}" VerticalOptions="End">
+              <ProgressBar Progress="{Binding UploadProgress}"
+                           Margin="50,5" />
+              <Label Text="{Binding UploadProgress,StringFormat='{0:P2}'}"
+                     HorizontalTextAlignment="Center"
+                     TextColor="White"
+                     FontSize="Medium" />
+
+            </StackLayout>
+        </Grid>
+
+
+	</npa:NPABasePage.Content>
+</npa:NPABasePage>

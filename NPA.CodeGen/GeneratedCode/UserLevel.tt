@@ -1,0 +1,111 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace NPA.CodeGen
+{
+    public class UserLevel : IEquatable<UserLevel>, IComparable<UserLevel>
+    {
+        public Guid UserLevelId { get; private set; }
+        public int UserLevelCode { get; private set; }
+		public string DisplayName { get; private set; }
+        
+        private UserLevel() { }
+
+        private UserLevel(Guid userLevelId, int userLevel, string displayName)
+        {
+            UserLevelId = userLevelId;
+            UserLevelCode = userLevel;
+			DisplayName = displayName;			
+        }
+
+        public bool Equals(UserLevel other)
+        {
+            return this.UserLevelId.Equals(other.UserLevelId);
+        }
+
+        public int CompareTo(UserLevel other)
+        {
+            return this.UserLevelCode.CompareTo(other.UserLevelCode);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+
+        public static UserLevel FromGuid(Guid userLevelId)
+        {
+            return GetValues().SingleOrDefault(ul => ul.UserLevelId == userLevelId);
+        }
+
+		public static UserLevel FromDisplayName(string displayName)
+		{
+		   return GetValues().SingleOrDefault(ul => string.Compare(ul.DisplayName, displayName, true) == 0);
+		}
+
+		public static UserLevel FromUserLevelCode(int userLevelCode)
+		{
+			return GetValues().SingleOrDefault(ul => ul.UserLevelCode == userLevelCode);
+		}
+<#
+var sql = "SELECT UserLevelID, UserLevel, Description " +
+          "FROM UserLevel WITH (NOLOCK) " +
+          "ORDER BY UserLevel ASC";
+
+var vals = new Collection<string>();
+
+using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+{
+    while (dr.Read())
+    {
+        vals.Add(string.Format("yield return {0};", dr["Description"].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+
+        public static UserLevel <#= dr["Description"].ToString().ToTitleCase().CleanIdentifierName() #> = new UserLevel(new Guid("<#= dr["UserLevelID"].ToString() #>"), <#= dr["UserLevel"].ToString() #>, "<#= dr["Description"].ToString().ToTitleCase().CleanIdentifierName() #>");
+<#
+    }
+}
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+
+        public static IEnumerable<UserLevel> GetValues()
+        {
+<#
+                PushIndent("            ");
+
+                foreach (var val in vals)
+                {
+                    WriteLine(val);
+                }
+                
+                ClearIndent();
+#>    
+        }
+<#
+    }
+#>
+    }
+}

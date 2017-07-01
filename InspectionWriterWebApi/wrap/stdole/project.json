@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "bin": {
+        "assembly": "C:\\Windows\\assembly\\GAC\\stdole\\7.0.3300.0__b03f5f7f11d50a3a\\stdole.dll"
+      }
+    }
+  }
+}

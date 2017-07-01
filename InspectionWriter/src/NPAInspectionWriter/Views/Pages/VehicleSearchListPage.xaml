@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npa:NPABasePage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="NPAInspectionWriter.Views.Pages.VehicleSearchListPage" 
+    xmlns:npa="clr-namespace:NPAInspectionWriter.Views;assembly=NPAInspectionWriter"
+    Title="Search Results" xmlns:layouts="clr-namespace:NPAInspectionWriter.Views.Layouts;assembly=NPAInspectionWriter">
+    <ListView x:Name="vehicleList" RowHeight="100" ItemSelected="ItemSelectedAction">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <layouts:VehicleSearchItemRow StyleId="disclosure"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</npa:NPABasePage>

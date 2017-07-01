@@ -1,0 +1,7 @@
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\bin\Release\InspectionWriterWebApi.Common.dll
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\bin\Release\InspectionWriterWebApi.Common.pdb
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\bin\Release\Newtonsoft.Json.dll
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\bin\Release\NPA.CodeGen.dll
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\bin\Release\Newtonsoft.Json.xml
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\obj\Release\InspectionWriterWebApi.Common.dll
+D:\npa\InspectionWriterApi.Common\InspectionWriterWebApi.Common\obj\Release\InspectionWriterWebApi.Common.pdb

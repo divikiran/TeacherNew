@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\dev-staging-vm\d$\InspectionWriterWebApi\WebApi-C</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>04/07/2017 11:56:34</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>04/07/2017 11:56:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ClientDoc.dll">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Controllers.dll">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataDefModel.dll">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="bin/InspectionWriterWebApi.Common.dll">
+      <publishTime>03/17/2017 09:03:27</publishTime>
+    </File>
+    <File Include="bin/InspectionWriterWebApi.Common.pdb">
+      <publishTime>03/17/2017 09:03:27</publishTime>
+    </File>
+    <File Include="bin/InspectionWriterWebApi.dll">
+      <publishTime>04/07/2017 11:56:31</publishTime>
+    </File>
+    <File Include="bin/InspectionWriterWebApi.pdb">
+      <publishTime>04/07/2017 11:56:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/25/2016 08:46:16</publishTime>
+    </File>
+    <File Include="bin/NPA.CodeGen.dll">
+      <publishTime>04/20/2016 09:38:52</publishTime>
+    </File>
+    <File Include="bin/NPA.Common.dll">
+      <publishTime>04/07/2017 08:49:47</publishTime>
+    </File>
+    <File Include="bin/NPA.Common.pdb">
+      <publishTime>04/07/2017 08:49:47</publishTime>
+    </File>
+    <File Include="bin/NPA.Core.dll">
+      <publishTime>04/07/2017 08:49:46</publishTime>
+    </File>
+    <File Include="bin/NPA.Core.pdb">
+      <publishTime>04/07/2017 08:49:46</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>03/07/2017 13:31:53</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/22/2016 14:12:36</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/22/2016 14:09:38</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/02/2016 07:41:02</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>04/07/2017 11:56:32</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/15/2017 13:54:47</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

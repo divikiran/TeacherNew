@@ -1,0 +1,122 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NPA.CodeGen
+{
+    public partial class State : IEquatable<State>, IComparable<State>
+    {
+        public Guid StateGuid { get; private set; }
+        public int StateId { get; private set; }
+        public string Abbreviation { get; private set; }
+        public string FullName { get; private set; }
+
+        private State() { }
+
+        private State(Guid stateGuid, int stateId, string abbreviation, string fullName)
+        {
+            this.StateGuid = stateGuid;
+            this.StateId = stateId;
+            this.Abbreviation = abbreviation;
+            this.FullName = fullName;
+        }
+        
+        public bool Equals(State other)
+        {
+            return this.StateGuid.Equals(other.StateGuid);
+        }
+
+        public int CompareTo(State other)
+        {
+            return this.Abbreviation.CompareTo(other.Abbreviation);
+        }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
+
+        public static State FromGuid(Guid guid)
+        {
+            return GetValues().SingleOrDefault(s => s.StateGuid == guid);
+        }
+
+        public static State FromId(int id)
+        {
+            return GetValues().SingleOrDefault(s => s.StateId == id);
+        }
+
+        public static State FromAbbreviation(string abbrev)
+        {
+            return GetValues().SingleOrDefault(s => string.Compare(s.Abbreviation, abbrev, true) == 0);
+        }
+
+        public static State FromFullName(string fullName)
+        {
+            return GetValues().SingleOrDefault(s => string.Compare(s.FullName, fullName, true) == 0);
+        }
+
+<#
+        var sql = "SELECT StatesGUID, StatesID, States, StateName " +
+                  "FROM States " +
+                  "WHERE ISNULL(Hide, 0) = 0 " + 
+                  "ORDER BY States ASC";
+
+        var vals = new Collection<string>();
+
+        using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+        {
+            while (dr.Read())
+            {
+                vals.Add(string.Format("yield return {0};", NPA.Common.Utils.ToTitleCase(dr["StateName"].ToString()).CleanIdentifierName()));
+#>
+        public static State <#= NPA.Common.Utils.ToTitleCase(dr["StateName"].ToString()).CleanIdentifierName() #> = 
+                new State(new Guid("<#= dr["StatesGUID"].ToString() #>"), <#= dr["StatesID"].ToString() #>, "<#= dr["States"].ToString() #>", "<#= NPA.Common.Utils.ToTitleCase(dr["StateName"].ToString()) #>");
+
+<#
+            }
+        }
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+        public static IEnumerable<State> GetValues()
+        {
+<#
+        PushIndent("            ");
+
+        foreach (var val in vals)
+        {
+            WriteLine(val);
+        }
+
+        ClearIndent();
+#>
+        }
+<#
+        }
+#>
+    }
+}

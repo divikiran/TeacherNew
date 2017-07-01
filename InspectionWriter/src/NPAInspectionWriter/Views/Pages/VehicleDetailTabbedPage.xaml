@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:npa="clr-namespace:NPAInspectionWriter.Views.Pages;assembly=NPAInspectionWriter" 
+    x:Class="NPAInspectionWriter.Views.Pages.VehicleDetailTabbedPage">
+    <TabbedPage.Children>
+        <npa:VehicleDetailsPage Title="Inspections" Icon="Icons/inspection-list.png" />
+        <npa:VehicleDetailCommentsPage Title="Comments" Icon="Icons/comments-icon.png" />
+        <npa:EmailPage Title="Send Email" Icon="Icons/send-message.png" />
+    </TabbedPage.Children>
+</TabbedPage>

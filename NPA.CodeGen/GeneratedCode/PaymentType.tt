@@ -1,0 +1,109 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace NPA.CodeGen
+{
+    public class PaymentType : IEquatable<PaymentType>, IComparable<PaymentType>
+    {
+        public Guid PaymentTypeId { get; private set; }
+        public string DisplayName { get; private set; }
+		public string ShortName { get; private set; }
+        public bool IsCashEquivalent { get; private set; }
+
+        private PaymentType() { }
+
+        private PaymentType(Guid paymentTypeId, string displayName, string shortName, bool isCashEquivalent)
+        {
+            PaymentTypeId = paymentTypeId;
+            DisplayName = displayName;
+			ShortName = shortName;
+            IsCashEquivalent = isCashEquivalent;
+        }
+
+        public bool Equals(PaymentType other)
+        {
+            return this.PaymentTypeId.Equals(other.PaymentTypeId);
+        }
+
+        public int CompareTo(PaymentType other)
+        {
+            return this.ShortName.CompareTo(other.ShortName);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+
+		public static PaymentType FromShortName(string shortName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.ShortName, shortName, true) == 0);
+		}
+
+		public static PaymentType FromDisplayName(string displayName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.DisplayName, displayName, true) == 0);
+		}
+<#
+var sql = "SELECT PaymentTypeID, PaymentType, CAST(ISNULL(CashEquivalent, 0) AS bit) AS CashEquivalent " +
+          "FROM PaymentType WITH (NOLOCK) " +
+          "WHERE ISNULL(Hide, 0) = 0 " +
+          "ORDER BY PaymentType ASC";
+
+var vals = new Collection<string>();
+
+using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+{
+    while (dr.Read())
+    {
+        vals.Add(string.Format("yield return {0};", dr["PaymentType"].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+
+        public static PaymentType <#= dr["PaymentType"].ToString().ToTitleCase().CleanIdentifierName() #> = new PaymentType(new Guid("<#= dr["PaymentTypeID"].ToString() #>"), "<#= dr["PaymentType"].ToString().ToTitleCase() #>", "<#= dr["PaymentType"].ToString().CleanIdentifierName() #>", <#= ((bool) dr["CashEquivalent"]) ? "true" : "false" #>);
+<#
+    }
+}
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+
+        public static IEnumerable<PaymentType> GetValues()
+        {
+            <#
+                PushIndent("            ");
+
+                foreach (var val in vals)
+                {
+                    WriteLine(val);
+                }
+                
+                ClearIndent();
+            #>    
+        }
+<#
+    }
+#>
+    }
+}

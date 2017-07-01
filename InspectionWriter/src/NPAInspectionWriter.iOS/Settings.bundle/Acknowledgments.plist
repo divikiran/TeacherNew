@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>StringsTable</key>
+    <string>Acknowledgements</string>
+    <key>PreferenceSpecifiers</key>
+    <array>
+       <dict>
+          <key>Title</key>
+<string>
+CR Writer is an Enterprise Application 
+Copyright (C) 2016 National Powersport Auctions
+</string>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+        </dict>
+        <dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Open Source Projects</string>
+		</dict>
+		<dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>Xamarin</string>
+            <key>Title</key>
+            <string>Xamarin Forms</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>Prism</string>
+            <key>Title</key>
+            <string>Prism Library</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>AcrUserDialogs</string>
+            <key>Title</key>
+            <string>Acr.UserDialogs</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>HockeyApp</string>
+            <key>Title</key>
+            <string>HockeySDK.Xamarin</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>Humanizer</string>
+            <key>Title</key>
+            <string>Humanizer</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>NewtonsoftJson</string>
+            <key>Title</key>
+            <string>Newtonsoft.Json</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>RgPluginsPopup</string>
+            <key>Title</key>
+            <string>Rg.Plugins.Popup</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>SQLiteNet</string>
+            <key>Title</key>
+            <string>SQLite.Net</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>Unity</string>
+            <key>Title</key>
+            <string>Unity Container</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>XamPluginBadge</string>
+            <key>Title</key>
+            <string>Xamarin Plugin - Badges</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>XamPluginBattery</string>
+            <key>Title</key>
+            <string>Xamarin Plugin - Battery</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>XamPluginConnectivity</string>
+            <key>Title</key>
+            <string>Xamarin Plugin - Connectivity</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>File</key>
+            <string>ZXing</string>
+            <key>Title</key>
+            <string>ZXing.Net.Mobile</string>
+        </dict>
+    </array>
+</dict>
+</plist>

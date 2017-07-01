@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NPAInspectionWriter.Views.Pages.TestPage" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+    <ContentPage.Content>
+        <flv:FlowListView HasUnevenRows="true" FlowItemsSource="{Binding Items}"  >
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <!--<Label x:Name="Label" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="Silver" Opacity="0.5" Text="{Binding .}" />-->
+                    <Image Source="{Binding .}" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+        </flv:FlowListView>
+    </ContentPage.Content>
+</ContentPage>

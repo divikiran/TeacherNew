@@ -1,0 +1,114 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace NPA.CodeGen
+{
+    public class VehicleCategory : IEquatable<VehicleCategory>, IComparable<VehicleCategory>
+    {
+        public Guid VehicleCategoryId { get; private set; }
+        public string ShortName { get; private set; }
+		public string DisplayName { get; private set; }
+        public VINType VinType { get; private set; }
+
+        private VehicleCategory() { }
+
+        private VehicleCategory(Guid vehicleCategoryId, string displayName, string shortName, VINType vinType)
+        {
+            VehicleCategoryId = vehicleCategoryId;
+            DisplayName = displayName;
+			ShortName = shortName;
+            VinType = vinType;
+        }
+
+        public bool Equals(VehicleCategory other)
+        {
+            return this.VehicleCategoryId.Equals(other.VehicleCategoryId);
+        }
+
+        public int CompareTo(VehicleCategory other)
+        {
+            return this.ShortName.CompareTo(other.ShortName);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+
+        public static VehicleCategory FromGuid(Guid categoryId)
+        {
+            return GetValues().SingleOrDefault(vc => vc.VehicleCategoryId == categoryId);
+        }
+
+		public static VehicleCategory FromShortName(string shortName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.ShortName, shortName, true) == 0);
+		}
+
+		public static VehicleCategory FromDisplayName(string displayName)
+		{
+		   return GetValues().SingleOrDefault(v => string.Compare(v.DisplayName, displayName, true) == 0);
+		}
+<#
+var sql = "SELECT VehicleCategoryID, VehicleCategory, VINType " +
+          "FROM VehicleCategory WITH (NOLOCK) " +
+          "WHERE ISNULL(Hide, 0) = 0 " +
+          "ORDER BY VehicleCategory ASC";
+
+var vals = new Collection<string>();
+
+using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+{
+    while (dr.Read())
+    {
+        vals.Add(string.Format("yield return {0};", dr["VehicleCategory"].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+
+        public static VehicleCategory <#= dr["VehicleCategory"].ToString().ToTitleCase().CleanIdentifierName() #> = new VehicleCategory(new Guid("<#= dr["VehicleCategoryID"].ToString() #>"), "<#= dr["VehicleCategory"].ToString() #>", "<#= dr["VehicleCategory"].ToString().ToTitleCase().CleanIdentifierName() #>", VINType.FromShortName("<#= dr["VINType"].ToString() #>"));
+<#
+    }
+}
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+
+        public static IEnumerable<VehicleCategory> GetValues()
+        {
+<#
+                PushIndent("            ");
+
+                foreach (var val in vals)
+                {
+                    WriteLine(val);
+                }
+                
+                ClearIndent();
+#>    
+        }
+<#
+    }
+#>
+    }
+}

@@ -1,0 +1,132 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".generated.cs" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Data.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.Common.dll" #>
+<#@ assembly name="$(SolutionDir)\Build\NPA.CodeGen.dll" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.ComponentModel" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
+<#@ import namespace="NPA.Core" #>
+<#@ import namespace="NPA.Data" #>
+<#@ import namespace="NPA.Common" #>
+<#@ import namespace="NPA.CodeGen" #>
+<# var connectionString = "Server=10.3.0.155;User ID=InspectionWriterAPI;Password=iK2FbO1h0gWr1Te!AP1;Initial Catalog=AMSProto;"; #>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace NPA.CodeGen
+{
+    public partial class SaleHoldReason : IEquatable<SaleHoldReason>, IComparable<SaleHoldReason>
+    {
+        public Guid SaleHoldReasonId { get; private set; }
+        public int SaleHoldReasonCode { get; private set; }
+        public bool HoldFromSale { get; private set; }
+        public string DisplayName { get; private set; }
+        public bool IsCashEquivalent { get; private set; }
+
+        private SaleHoldReason() { }
+
+        private SaleHoldReason(Guid saleHoldReasonId, int saleHoldReasonCode, bool holdFromSale, string displayName)
+        {
+            SaleHoldReasonId = saleHoldReasonId;
+            SaleHoldReasonCode = saleHoldReasonCode;
+            HoldFromSale = holdFromSale;
+            DisplayName = displayName;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override bool Equals(Object other)
+        {
+            if (other is SaleHoldReason) return this.Equals((SaleHoldReason)other);
+
+            return false;
+        }
+
+        public bool Equals(SaleHoldReason other)
+        {
+            return this.SaleHoldReasonId.Equals(other.SaleHoldReasonId);
+        }
+
+        public int CompareTo(SaleHoldReason other)
+        {
+            return this.DisplayName.CompareTo(other.DisplayName);
+        }
+
+        public static bool operator == (SaleHoldReason lhs, SaleHoldReason rhs)
+        {
+            return lhs.Equals(rhs);
+        }
+
+        public static bool operator != (SaleHoldReason lhs, SaleHoldReason rhs)
+        {
+            return !(lhs == rhs);
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
+
+        public static SaleHoldReason FromDisplayName(string displayName)
+        {
+           return GetValues().SingleOrDefault(v => string.Compare(v.DisplayName, displayName, true) == 0);
+        }
+
+	public static SaleHoldReason FromReasonCode(int reasonCode)
+	{
+		return GetValues().SingleOrDefault(v => v.SaleHoldReasonCode == reasonCode);
+	}
+<#
+var sql = "SELECT SaleHoldReasonID, SaleHoldReason, SaleHoldReasonCode, CAST(ISNULL(HoldFromSale, 0) AS bit) AS HoldFromSale " +
+          "FROM SaleHoldReason WITH (NOLOCK) " +
+          "WHERE ISNULL(Hide, 0) = 0 " +
+          "ORDER BY SaleHoldReasonCode ASC";
+
+var vals = new Collection<string>();
+
+using (var dr = SqlHelper.ExecuteReader(connectionString, CommandType.Text, sql))
+{
+    while (dr.Read())
+    {
+        vals.Add(string.Format("yield return {0};", dr["SaleHoldReason"].ToString().ToTitleCase().CleanIdentifierName()));
+#>
+
+        public static SaleHoldReason <#= dr["SaleHoldReason"].ToString().ToTitleCase().CleanIdentifierName() #> = new SaleHoldReason(new Guid("<#= dr["SaleHoldReasonID"].ToString() #>"), <#= dr["SaleHoldReasonCode"].ToString() #>, <#= ((bool) dr["HoldFromSale"]).ToString().ToLower() #>, "<#= dr["SaleHoldReason"].ToString().CleanIdentifierName() #>");
+<#
+    }
+}
+#>
+<#
+    if (vals.Count > 0)
+    {
+#>
+
+        public static IEnumerable<SaleHoldReason> GetValues()
+        {
+            <#
+                PushIndent("            ");
+
+                foreach (var val in vals)
+                {
+                    WriteLine(val);
+                }
+                
+                ClearIndent();
+            #>    
+        }
+<#
+    }
+#>
+    }
+}

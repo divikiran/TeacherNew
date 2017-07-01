@@ -1,0 +1,1 @@
+D:\npa\InspectionWriterWebApi\ServiceTest\bin\Release\ServiceTest.exe.config
